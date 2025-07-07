@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Register from './components/Register';
 import Venue from './components/Venue';
 import Sponsor from './components/Sponsor';
+import MediaPartners from './components/MediaPartners';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Route path="booking" element={<Register />} />
       <Route path="venue" element={<Venue />} />
       <Route path="sponsor" element={<Sponsor />} />
+      <Route path="media-partners" element={<MediaPartners />} />
 
       </Route>
     </Routes>
