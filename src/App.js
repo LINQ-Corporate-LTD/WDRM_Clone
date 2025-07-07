@@ -9,6 +9,7 @@ import Sponsor from "./components/Sponsor";
 import MediaPartners from "./components/MediaPartners";
 import Agenda from "./components/Agenda";
 import WhoShouldAttend from "./components/WhoShouldAttend";
+import FeaturedSpeaker from "./components/FeaturedSpeaker";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
             <Route path="media-partners" element={<MediaPartners />} />
             <Route path="agenda" element={<Agenda />} />
             <Route path="who-should-attend" element={<WhoShouldAttend />} />
+            <Route path="featuredSpeaker" element={<FeaturedSpeaker />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
