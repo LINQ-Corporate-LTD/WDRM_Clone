@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-// const navItems = [
-//   { name: "Event Details", href: "booking" },
-//   { name: "Speakers", href: "#speakers" },
-//   { name: "Sponsors", href: "sponsor" },
-//   { name: "Venue", href: "venue" },
-//   { name: "Resources", href: "#resources" },
-//   { name: "Contact Us", href: "contact-us" },
-// ];
-
 const navItems = [
   {
     name: "Event Details",
@@ -17,7 +8,7 @@ const navItems = [
     dropdown: [
       { name: "Register & Book Now", href: "booking" },
       { name: "Program 2025", href: "agenda" },
-      { name: "Who Should Attend", href: "#attend" },
+      { name: "Who Should Attend", href: "who-should-attend" },
     ],
   },
   {
