@@ -97,7 +97,7 @@ const Venue = () => {
           <section class="contact-section">
         <div class="">
             <div class="contact-content">
-                <h2 class="section-title">Contact the Venue</h2>
+                <h2 class="section-title_venue text-[#080808]">Contact the Venue</h2>
                 
                 <div class="contact-cards">
                     <div class="contact-card">

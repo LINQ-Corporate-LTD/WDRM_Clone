@@ -284,7 +284,7 @@
             width: 100%;
         }
 
-        .section-title {
+        .section-title_venue {
             font-size: 2.5rem;
             font-weight: 700;
             color: #333;
@@ -392,7 +392,7 @@
                 padding: 2rem;
             }
 
-            .section-title {
+            .section-title_venue_venue {
                 font-size: 2rem;
                 margin-bottom: 2rem;
             }
@@ -403,7 +403,7 @@
         }
 
         @media (max-width: 576px) {
-            .section-title {
+            .section-title_venue {
                 font-size: 1.5rem;
             }
 
