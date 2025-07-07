@@ -1,0 +1,47 @@
+.logo-slider-container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Remove background and box shadow from slick slider */
+.slick-slider {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.slick-track {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.slick-list {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Remove any borders or outlines */
+.slick-slider,
+.slick-track,
+.slick-list {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Additional override for any container backgrounds */
+.logo-slider-container .slick-slider {
+  background: transparent !important;
+}
+
+.logo-slider-container .slick-track {
+  background: transparent !important;
+}
+
+.logo-slider-container .slick-list {
+  background: transparent !important;
+}
