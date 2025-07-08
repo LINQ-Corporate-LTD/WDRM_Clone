@@ -12,6 +12,7 @@ import WhoShouldAttend from "./components/WhoShouldAttend";
 import FeaturedSpeaker from "./components/FeaturedSpeaker";
 import Faq from "./components/Faq";
 import CallForPresentation from "./components/CallForPresentation";
+import Speakers from "./components/Speakers";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
             <Route path="featuredSpeaker" element={<FeaturedSpeaker />} />
             <Route path="faqs" element={<Faq />} />
             <Route path="speakers" element={<CallForPresentation />} />
+            <Route path="featured-Speakers" element={<Speakers />} />
+
 
           </Route>
         </Routes>
