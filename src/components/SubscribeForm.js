@@ -1,37 +1,178 @@
 import React, { useState, useEffect } from "react";
 
 const SubscribeForm = () => {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Responsive breakpoints
+  const isMobile = windowWidth < 768;
+  const isTablet = windowWidth >= 768 && windowWidth < 1024;
+  const isDesktop = windowWidth >= 1024;
+
+  // Dynamic styles based on screen size
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#00baff',
+    minHeight: isMobile ? '400px' : '460px',
+    padding: isMobile ? '40px 15px' : isTablet ? '60px 30px' : '100px 20px',
+    width: '100%'
+  };
+
+  const maxWidthContainerStyle = {
+    maxWidth: '1200px',
+    width: '100%',
+    margin: '0 auto'
+  };
+
+  const whiteBoxStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    borderRadius: '2px',
+    margin: '0 auto',
+    padding: isMobile ? '30px 20px' : isTablet ? '40px 30px' : '50px 40px',
+    width: '100%',
+    boxSizing: 'border-box'
+  };
+
+  const headingStyle = {
+    color: '#1a1a1a',
+    fontSize: isMobile ? '20px' : isTablet ? '24px' : '27px',
+    fontWeight: '800',
+    lineHeight: isMobile ? '22px' : '24px',
+    margin: '0',
+    padding: '0',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px'
+  };
+
+  const paragraphStyle = {
+    color: '#464646',
+    fontSize: isMobile ? '14px' : '16px',
+    fontWeight: '600',
+    marginTop: isMobile ? '15px' : '20px',
+    marginBottom: isMobile ? '20px' : '22px',
+    padding: '0',
+    textAlign: 'center',
+    width: isMobile ? '95%' : isTablet ? '80%' : '70%',
+    lineHeight: '1.4'
+  };
+
+  const formStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    margin: '0',
+    padding: '0',
+    width: isMobile ? '100%' : '90%'
+  };
+
+  const inputContainerStyle = {
+    display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    margin: '0',
+    padding: '0',
+    width: '100%',
+    gap: isMobile ? '15px' : '22px'
+  };
+
+  const inputStyle = {
+    backgroundColor: '#ececec',
+    border: 'none',
+    outline: 'none',
+    borderRadius: '2px',
+    height: '50px',
+    padding: '0 20px',
+    width: isMobile ? '100%' : isTablet ? 'calc(50% - 11px)' : '415px',
+    fontSize: '16px',
+    boxSizing: 'border-box',
+    fontFamily: 'inherit'
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#00baff',
+    border: '1px solid transparent',
+    borderRadius: '2px',
+    color: 'white',
+    cursor: 'pointer',
+    fontSize: isMobile ? '18px' : '20px',
+    fontWeight: '800',
+    height: '50px',
+    textTransform: 'uppercase',
+    transition: 'all 0.3s ease',
+    width: isMobile ? '100%' : isTablet ? '200px' : '225px',
+    marginTop: isMobile ? '10px' : '0',
+    fontFamily: 'inherit'
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your form submission logic here
+    console.log('Form submitted');
+  };
+
+  const handleButtonHover = (e, isHovering) => {
+    if (isHovering) {
+      e.target.style.backgroundColor = 'white';
+      e.target.style.color = '#00baff';
+      e.target.style.borderColor = '#00baff';
+    } else {
+      e.target.style.backgroundColor = '#00baff';
+      e.target.style.color = 'white';
+      e.target.style.borderColor = 'transparent';
+    }
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center bg-[#00baff] max-h-[460px] py-[100px]">
-      <div className="mx-auto max-w-[1200px] w-full">
-        <div className="flex flex-col items-center justify-center bg-white rounded-[2px] mx-auto max-h-[265px] py-[50px] w-full">
-          <h2 className="text-[#1a1a1a] text-[27px] font-extrabold leading-[24px] m-0 p-0 text-center capitalize">
+    <div style={containerStyle}>
+      <div style={maxWidthContainerStyle}>
+        <div style={whiteBoxStyle}>
+          <h2 style={headingStyle}>
             SUBSCRIBE FOR UPDATES
           </h2>
-          <p className="text-[#464646] text-[16px] font-semibold hyphens-none mt-[20px] mb-[22px] p-0 text-center w-[70%]">
+          <p style={paragraphStyle}>
             By submitting, you agree to receive email communications from the
             event organizers, including upcoming promotions and discounted
             tickets, new, and access to related events.
           </p>
-          <form className="flex flex-col items-center justify-between m-0 p-0 w-[90%]">
-            <div className="flex items-center justify-between m-0 p-0 w-full">
+          <form style={formStyle} onSubmit={handleSubmit}>
+            <div style={inputContainerStyle}>
               <input
-                className="bg-[#ececec] border-none focus:border-none focus:outline-none rounded-[2px] h-[50px] mr-[22px] px-[20px] w-[415px]"
+                style={inputStyle}
                 name="name"
                 type="text"
                 placeholder="Name *"
+                required
               />
-              <div className="h-[50px] mr-[22px] w-[415px]">
-                <input
-                  className="bg-[#ececec] border-none focus:border-none focus:outline-none rounded-[2px] h-[50px] mr-[22px] px-[20px] w-[415px]"
-                  name="email"
-                  placeholder="Email Address"
-                />
-              </div>
+              <input
+                style={inputStyle}
+                name="email"
+                type="email"
+                placeholder="Email Address *"
+                required
+              />
               <button
-                className="bg-[#00baff] border border-transparent rounded-[2px] text-white cursor-pointer text-[20px] font-extrabold h-[50px] uppercase transition duration-300 w-[225px] 
-             hover:bg-white hover:text-[#00baff] hover:border-[#00baff]"
+                style={buttonStyle}
                 type="submit"
+                onMouseEnter={(e) => handleButtonHover(e, true)}
+                onMouseLeave={(e) => handleButtonHover(e, false)}
               >
                 Join
               </button>
@@ -42,4 +183,5 @@ const SubscribeForm = () => {
     </div>
   );
 };
+
 export default SubscribeForm;

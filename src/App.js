@@ -10,6 +10,7 @@ import MediaPartners from "./components/MediaPartners";
 import Agenda from "./components/Agenda";
 import WhoShouldAttend from "./components/WhoShouldAttend";
 import FeaturedSpeaker from "./components/FeaturedSpeaker";
+import Faq from "./components/Faq";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             <Route path="agenda" element={<Agenda />} />
             <Route path="who-should-attend" element={<WhoShouldAttend />} />
             <Route path="featuredSpeaker" element={<FeaturedSpeaker />} />
-
+            <Route path="faqs" element={<Faq />} />
           </Route>
         </Routes>
       </BrowserRouter>

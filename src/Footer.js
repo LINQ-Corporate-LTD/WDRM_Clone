@@ -1,224 +1,353 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
 
 const Footer = () => {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Responsive breakpoints
+  const isMobile = windowWidth < 768;
+  const isTablet = windowWidth >= 768 && windowWidth < 1024;
+  const isDesktop = windowWidth >= 1024;
+
+  // Dynamic styles
+  const footerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'black',
+    margin: '0 auto',
+    paddingTop: isMobile ? '40px' : isTablet ? '60px' : '100px',
+    paddingLeft: isMobile ? '20px' : '0',
+    paddingRight: isMobile ? '20px' : '0'
+  };
+
+  const containerStyle = {
+    width: '100%',
+    maxWidth: isMobile ? '100%' : isTablet ? '1200px' : '1400px'
+  };
+
+  const topSectionStyle = {
+    display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
+    justifyContent: 'flex-start',
+    marginBottom: isMobile ? '30px' : '50px',
+    overflow: 'visible'
+  };
+
+  const logoContainerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: isMobile ? 'center' : 'flex-start',
+    maxHeight: '68px',
+    overflow: 'visible',
+    position: 'relative',
+    width: isMobile ? '100%' : '24%',
+    marginBottom: isMobile ? '30px' : '0'
+  };
+
+  const logoStyle = {
+    cursor: 'pointer',
+    height: 'auto',
+    maxWidth: isMobile ? '120px' : '150px',
+    minWidth: isMobile ? '80px' : '100px',
+    objectFit: 'contain',
+    width: '100%'
+  };
+
+  const navContainerStyle = {
+    display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
+    justifyContent: 'space-between',
+    maxHeight: isMobile ? 'auto' : '68px',
+    width: isMobile ? '100%' : '71%',
+    gap: isMobile ? '20px' : '0'
+  };
+
+  const navColumnStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    width: isMobile ? '100%' : 'auto'
+  };
+
+  const navLinkStyle = {
+    color: 'white',
+    fontSize: isMobile ? '13px' : '14px',
+    fontWeight: 'bold',
+    lineHeight: isMobile ? '30px' : '35px',
+    textDecoration: 'none',
+    textTransform: 'uppercase'
+  };
+
+  const dividerStyle = {
+    borderBottom: '1px solid #5e5e5e',
+    margin: '0',
+    padding: '0',
+    width: '100%'
+  };
+
+  const middleSectionStyle = {
+    display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
+    justifyContent: 'flex-start',
+    paddingTop: isMobile ? '30px' : '52px',
+    paddingBottom: isMobile ? '40px' : '60px'
+  };
+
+  const socialContainerStyle = {
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: isMobile ? 'center' : 'flex-start',
+    paddingLeft: isMobile ? '0' : '5px',
+    width: isMobile ? '100%' : '24%',
+    marginBottom: isMobile ? '30px' : '0'
+  };
+
+  const socialIconStyle = {
+    height: '30px',
+    width: '30px',
+    marginRight: '16px'
+  };
+
+  const contentContainerStyle = {
+    display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    width: isMobile ? '100%' : '71%',
+    gap: isMobile ? '30px' : '0'
+  };
+
+  const contentColumnStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    width: isMobile ? '100%' : 'auto'
+  };
+
+  const sectionHeadingStyle = {
+    color: 'white',
+    fontSize: '16px',
+    fontWeight: '800',
+    marginBottom: '25px',
+    whiteSpace: isMobile ? 'normal' : 'nowrap'
+  };
+
+  const contentLinkStyle = {
+    color: 'white',
+    fontSize: isMobile ? '13px' : '14px',
+    fontWeight: '500',
+    lineHeight: isMobile ? '35px' : '40px',
+    margin: '0',
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+    pointerEvents: 'auto'
+  };
+
+  const bottomSectionStyle = {
+    display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
+    alignItems: isMobile ? 'flex-start' : 'center',
+    justifyContent: 'space-between',
+    margin: '25px 0',
+    gap: isMobile ? '15px' : '0'
+  };
+
+  const bottomTextStyle = {
+    color: 'white',
+    fontSize: isMobile ? '12px' : '14px',
+    margin: '0',
+    padding: '0',
+    marginBottom: isMobile ? '0' : '18px'
+  };
+
+  const bottomLinkStyle = {
+    color: 'white',
+    textDecoration: 'none'
+  };
+
   return (
-    <footer className="flex flex-col items-center justify-center bg-black mx-auto pt-[60px] sm:pt-[70px] md:pt-[90px] lg:pt-[100px] xl:pt-[120px]">
-      <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px]">
-        <div className="flex justify-start mb-[50px] overflow-visible">
-          <div className="flex items-center justify-start max-h-[68px] overflow-visible relative w-[24%]">
+    <footer style={footerStyle}>
+      <div style={containerStyle}>
+        {/* Top Section - Logo and Navigation */}
+        <div style={topSectionStyle}>
+          <div style={logoContainerStyle}>
             <div>
               <img
-                className="cursor-pointer h-max max-w-[150px] min-w-[100px] object-contain w-full"
+                style={logoStyle}
                 src="https://www.desalination-resource-recovery.com/api/images/logo/1742534509561.png"
                 alt="WDRM Logo"
                 height={64}
-              ></img>
+              />
             </div>
           </div>
-          <div className="flex justify-between max-h-[68px] w-[71%]">
-            <div className="flex flex-col">
-              <a
-                className="text-white text-[14px] font-bold leading-[35px] no-underline uppercase"
-                href="/home"
-              >
+          <div style={navContainerStyle}>
+            <div style={navColumnStyle}>
+              <a style={navLinkStyle} href="/home">
                 Event Details
               </a>
-              <a
-                className="text-white text-[14px] font-bold leading-[35px] no-underline uppercase"
-                href="/home"
-              >
+              <a style={navLinkStyle} href="/home">
                 Speakers
               </a>
             </div>
-            <div className="flex flex-col">
-              <a
-                className="text-white text-[14px] font-bold leading-[35px] no-underline uppercase"
-                href="/home"
-              >
+            <div style={navColumnStyle}>
+              <a style={navLinkStyle} href="/home">
                 Sponsors
               </a>
-              <a
-                className="text-white text-[14px] font-bold leading-[35px] no-underline uppercase"
-                href="/home"
-              >
+              <a style={navLinkStyle} href="/home">
                 Venue
               </a>
             </div>
-            <div className="flex flex-col">
-              <a
-                className="text-white text-[14px] font-bold leading-[35px] no-underline uppercase"
-                href="/home"
-              >
+            <div style={navColumnStyle}>
+              <a style={navLinkStyle} href="/home">
                 Program
               </a>
-              <a
-                className="text-white text-[14px] font-bold leading-[35px] no-underline uppercase"
-                href="/home"
-              >
+              <a style={navLinkStyle} href="/home">
                 Benefits
               </a>
             </div>
-            <div className="flex flex-col">
-              <a
-                className="text-white text-[14px] font-bold leading-[35px] no-underline uppercase"
-                href="/home"
-              >
+            <div style={navColumnStyle}>
+              <a style={navLinkStyle} href="/home">
                 Media
               </a>
-              <a
-                className="text-white text-[14px] font-bold leading-[35px] no-underline uppercase"
-                href="/home"
-              >
+              <a style={navLinkStyle} href="/home">
                 Contact Us
               </a>
             </div>
-            <div className="flex flex-col">
-              <a
-                className="text-white text-[14px] font-bold leading-[35px] no-underline uppercase"
-                href="/home"
-              >
+            <div style={navColumnStyle}>
+              <a style={navLinkStyle} href="/home">
                 Gallery
               </a>
-              <a
-                className="text-white text-[14px] font-bold leading-[35px] no-underline uppercase"
-                href="/home"
-              >
-                Faq
+              <a style={navLinkStyle} href="/home">
+                FAQ
               </a>
             </div>
           </div>
         </div>
-        <div className="border-b border-[#5e5e5e] m-0 p-0 w-full"></div>
-        <div className="flex justify-start pt-[52px] pb-[60px]">
-          <div className="flex items-start justify-start pl-[5px] w-[24%]">
+
+        <div style={dividerStyle}></div>
+
+        {/* Middle Section - Social Icons and Content */}
+        <div style={middleSectionStyle}>
+          <div style={socialContainerStyle}>
             <a
               target="_blank"
               href="mailto:delegates@iq-hub.com?subject=Desalination & Resource Recovery 2025"
-              className="mr-[16px] no-underline"
+              style={{ marginRight: '16px', textDecoration: 'none' }}
             >
               <img
-                className="h-[30px] w-[30px]"
+                style={socialIconStyle}
                 src="https://www.desalination-resource-recovery.com/images/icons/icon-mail.png"
                 alt="Email"
                 width={20}
                 height={20}
-              ></img>
+              />
             </a>
             <a
               target="_blank"
               href="https://www.linkedin.com/showcase/smart-water-utilities/"
-              className="mr-[0px] no-underline"
+              style={{ marginRight: '0px', textDecoration: 'none' }}
             >
               <img
-                className="h-[30px] w-[30px]"
+                style={socialIconStyle}
                 src="https://www.desalination-resource-recovery.com/images/icons/icon-linkedin.png"
-                alt="Email"
+                alt="LinkedIn"
                 width={20}
                 height={20}
-              ></img>
+              />
             </a>
           </div>
-          <div className="flex items-start justify-between w-[71%]">
-            <div className="w-[50%] flex flex-col items-start justify-start">
-              <h5 className="text-white text-[16px] font-extrabold mb-[25px] whitespace-nowrap">
+          
+          <div style={contentContainerStyle}>
+            <div style={{ ...contentColumnStyle, width: isMobile ? '100%' : '50%' }}>
+              <h5 style={sectionHeadingStyle}>
                 OTHER EVENTS
               </h5>
               <a
-                className="text-white text-[14px] font-medium leading-[40px] m-0 no-underline"
+                style={contentLinkStyle}
                 href="https://www.water-resource-recovery.com/"
                 target="_blank"
-                style={{ textTransform: "uppercase", pointerEvents: "auto" }}
               >
-                {" "}
                 Water Resource Recovery USA 2025
               </a>
               <a
-                className="text-white text-[14px] font-medium leading-[40px] m-0 no-underline"
-                href=" https://www.membrane-technology-show.com/"
+                style={contentLinkStyle}
+                href="https://www.membrane-technology-show.com/"
                 target="_blank"
-                style={{ textTransform: "uppercase", pointerEvents: "auto" }}
               >
-                {" "}
                 Membrane Technology USA 2025
               </a>
               <a
-                className="text-white text-[14px] font-medium leading-[40px] m-0 no-underline"
+                style={contentLinkStyle}
                 href="https://www.europe.pfas-summit.com/"
                 target="_blank"
-                style={{ textTransform: "uppercase", pointerEvents: "auto" }}
               >
-                {" "}
                 PFAS Treatment Europe 2025
               </a>
             </div>
-            <div className="flex flex-col items-start justify-start">
-              <h5 className="text-white text-[16px] font-extrabold mb-[25px] whitespace-nowrap">
+            
+            <div style={contentColumnStyle}>
+              <h5 style={sectionHeadingStyle}>
                 QUICK LINKS
               </h5>
-              <a
-                className="text-white text-[14px] font-medium leading-[40px] m-0 no-underline"
-                href="/booking"
-              >
-                {" "}
+              <a style={contentLinkStyle} href="/booking">
                 Register
               </a>
-              <a
-                className="text-white text-[14px] font-medium leading-[40px] m-0 no-underline"
-                href="/who-should-attend"
-              >
-                {" "}
+              <a style={contentLinkStyle} href="/who-should-attend">
                 Benefits
               </a>
-              <a
-                className="text-white text-[14px] font-medium leading-[40px] m-0 no-underline"
-                href="/faq"
-              >
-                {" "}
+              <a style={contentLinkStyle} href="/faq">
                 FAQ
               </a>
             </div>
-            <div className="flex flex-col items-start justify-start">
-              <h5 className="text-white text-[16px] font-extrabold mb-[25px] whitespace-nowrap">
+            
+            <div style={contentColumnStyle}>
+              <h5 style={sectionHeadingStyle}>
                 CONTACT US
               </h5>
               <a
-                className="text-white text-[14px] font-medium leading-[40px] m-0 no-underline"
+                style={contentLinkStyle}
                 href="mailto:delegates@iq-hub.com?subject=Desalination & Resource Recovery 2025"
               >
-                {" "}
                 Email
               </a>
-              <a
-                className="text-white text-[14px] font-medium leading-[40px] m-0 no-underline"
-                href="/contact-us"
-              >
-                {" "}
+              <a style={contentLinkStyle} href="/contact-us">
                 Customer Support
               </a>
-              <a
-                className="text-white text-[14px] font-medium leading-[40px] m-0 no-underline"
-                href="/terms-and-conditions"
-              >
-                {" "}
+              <a style={contentLinkStyle} href="/terms-and-conditions">
                 Terms and Conditions
               </a>
             </div>
           </div>
         </div>
-        <div className="border-b border-[#5e5e5e] m-0 p-0 w-full"></div>
-        <div className="flex items-center justify-between my-[25px]">
-          <p className="text-white text-[14px] m-0 p-0 mb-[18px]">
-            <a className="text-white no-underline" href="/privacy-policy">
+
+        <div style={dividerStyle}></div>
+
+        {/* Bottom Section - Copyright */}
+        <div style={bottomSectionStyle}>
+          <p style={bottomTextStyle}>
+            <a style={bottomLinkStyle} href="/privacy-policy">
               Privacy Policy
             </a>
-            <span className="text-white mx-[3px] my-0"> | </span>
+            <span style={{ color: 'white', margin: '0 3px' }}> | </span>
             IQ International PTe. LTD
           </p>
-          <p className="text-white text-[14px] m-0 p-0">@2025 Desilation & Resource Recovery</p>
+          <p style={bottomTextStyle}>
+            @2025 Desalination & Resource Recovery
+          </p>
         </div>
       </div>
     </footer>
   );
 };
+
 export default Footer;
