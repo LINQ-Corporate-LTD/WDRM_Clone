@@ -1,10 +1,9 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import SubscribeForm from "./SubscribeForm";
 import Footer from "../Footer";
 import FeaturedSpeaker from "./FeaturedSpeaker";
-import { Users, Settings, TrendingUp, Megaphone } from "lucide-react";
 const CallForPresentation = () => {
   const features = [
     {
@@ -36,7 +35,6 @@ const CallForPresentation = () => {
         "Join an exclusive gathering that draws journalists from top media outlets like Bloomberg, Financial Times, Forbes, and CNN Business. Elevate your message to a global audience.",
     },
   ];
-
   const styles = {
     title: {
       color: "#181818",
@@ -111,13 +109,169 @@ const CallForPresentation = () => {
     },
   };
 
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Responsive breakpoints
+  const isXSmall = windowWidth < 480;
+  const isSmall = windowWidth >= 480 && windowWidth < 768;
+  const isMedium = windowWidth >= 768 && windowWidth < 1024;
+  const isLarge = windowWidth >= 1024 && windowWidth < 1440;
+  const isXLarge = windowWidth >= 1440;
+
+  const isMobile = windowWidth < 768;
+  const isTablet = windowWidth >= 768 && windowWidth < 1024;
+  const isDesktop = windowWidth >= 1024;
+
+  // Dynamic Styles
+  const sectionStyle = {
+    paddingTop: isXSmall ? "30px" : isSmall ? "40px" : "50px",
+    paddingBottom: isXSmall ? "30px" : isSmall ? "40px" : "50px",
+    backgroundColor: "#080808",
+    paddingLeft: isXSmall ? "15px" : isSmall ? "20px" : isMedium ? "30px" : "40px",
+    paddingRight: isXSmall ? "15px" : isSmall ? "20px" : isMedium ? "30px" : "40px"
+  };
+
+  const containerStyle = {
+    margin: "0 auto",
+    maxWidth: isXSmall ? "100%" : isSmall ? "100%" : isMedium ? "900px" : isLarge ? "1200px" : "1400px",
+    width: "100%"
+  };
+
+  const innerContainerStyle = {
+    margin: "0 auto"
+  };
+
+  const headingStyle = {
+    color: "white",
+    fontSize: isXSmall ? "20px" : isSmall ? "24px" : isMedium ? "26px" : isLarge ? "30px" : "32px",
+    fontWeight: "800",
+    margin: "0",
+    padding: "0",
+    textAlign: "center",
+    textTransform: "uppercase",
+    lineHeight: "1.2"
+  };
+
+  const paragraphStyle = {
+    color: "white",
+    fontSize: isXSmall ? "14px" : isSmall ? "15px" : "16px",
+    fontWeight: "400",
+    paddingTop: isXSmall ? "20px" : isSmall ? "25px" : "32px",
+    textAlign: "center",
+    lineHeight: "1.6",
+    margin: "0",
+    maxWidth: isXSmall ? "100%" : isSmall ? "95%" : "90%",
+    marginLeft: "auto",
+    marginRight: "auto"
+  };
+
+  const formStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: isXSmall ? "25px" : isSmall ? "30px" : isMedium ? "35px" : "42px"
+  };
+
+  const formRowStyle = {
+    display: "flex",
+    flexDirection: isMobile ? "column" : "row",
+    justifyContent: "space-between",
+    width: "100%",
+    marginBottom: isXSmall ? "15px" : isSmall ? "18px" : "23px",
+    gap: isMobile ? "15px" : isTablet ? "20px" : "30px"
+  };
+
+  const inputContainerStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    width: isMobile ? "100%" : "calc(50% - 15px)"
+  };
+
+  const inputStyle = {
+    backgroundColor: "white",
+    border: "none",
+    borderRadius: "2px",
+    height: isXSmall ? "44px" : "48px",
+    outline: "none",
+    padding: isXSmall ? "0 15px" : isSmall ? "0 20px" : "0 23px",
+    width: "100%",
+    fontSize: isXSmall ? "14px" : isSmall ? "15px" : "16px",
+    boxSizing: "border-box",
+    fontFamily: "inherit"
+  };
+
+  const textareaContainerStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginBottom: isXSmall ? "18px" : "23px",
+    width: "100%"
+  };
+
+  const textareaStyle = {
+    border: "none",
+    borderRadius: "2px",
+    height: isXSmall ? "120px" : isSmall ? "140px" : isMedium ? "160px" : "185px",
+    outline: "none",
+    padding: isXSmall ? "15px" : isSmall ? "18px" : "20px 23px",
+    resize: "none",
+    width: "100%",
+    fontSize: isXSmall ? "14px" : isSmall ? "15px" : "16px",
+    boxSizing: "border-box",
+    fontFamily: "inherit"
+  };
+
+  const submitButtonStyle = {
+    backgroundColor: "transparent",
+    border: "1px solid hsla(0,0%,100%,0.753)",
+    borderRadius: "2px",
+    color: "white",
+    cursor: "pointer",
+    fontSize: isXSmall ? "14px" : isSmall ? "16px" : isMedium ? "18px" : "20px",
+    fontWeight: "800",
+    height: isXSmall ? "45px" : "50px",
+    marginTop: isXSmall ? "25px" : isSmall ? "35px" : "50px",
+    minWidth: isXSmall ? "150px" : isSmall ? "180px" : "230px",
+    padding: isXSmall ? "0 30px" : isSmall ? "0 40px" : "0 50px",
+    textTransform: "uppercase",
+    transition: "all 0.3s ease"
+  };
+
+  // Event Handlers
+  const handleSubmitHover = (e, isHovering) => {
+    if (isHovering) {
+      e.target.style.backgroundColor = "white";
+      e.target.style.color = "#181818";
+    } else {
+      e.target.style.backgroundColor = "transparent";
+      e.target.style.color = "white";
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // Add your form submission logic here
+    console.log('Form submitted');
+  };
+
   return (
     <>
       <Navbar forceScrolled />
       <div>
         <div
           style={{
-            paddingTop: "200px",
+            paddingTop: "150px",
             paddingBottom: "100px",
             backgroundColor: "rgb(241, 241, 241)",
           }}
@@ -442,6 +596,78 @@ const CallForPresentation = () => {
             </div>
           </div>
         </div>
+
+         <div style={sectionStyle}>
+      <div style={containerStyle}>
+        <div style={innerContainerStyle}>
+          <h2 style={headingStyle}>
+           quick proposal
+          </h2>
+          <form style={formStyle} onSubmit={handleFormSubmit}>
+            <div style={formRowStyle}>
+              <div style={inputContainerStyle}>
+                <input
+                  name="fullname"
+                  type="text"
+                  placeholder="Full Name *"
+                  style={inputStyle}
+                  required
+                />
+              </div>
+              <div style={inputContainerStyle}>
+                <input
+                  name="companyname"
+                  type="text"
+                  placeholder="Company Name *"
+                  style={inputStyle}
+                  required
+                />
+              </div>
+            </div>
+            
+            <div style={formRowStyle}>
+              <div style={inputContainerStyle}>
+                <input
+                  name="mobilenumber"
+                  type="tel"
+                  placeholder="Mobile Number *"
+                  style={inputStyle}
+                  required
+                />
+              </div>
+              <div style={inputContainerStyle}>
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email Address *"
+                  style={inputStyle}
+                  required
+                />
+              </div>
+            </div>
+            
+            <div style={textareaContainerStyle}>
+              <textarea
+                name="briefOutline"
+                placeholder="Brief Outline"
+                cols={30}
+                rows={6}
+                style={textareaStyle}
+              />
+            </div>
+            
+            <button
+              style={submitButtonStyle}
+              type="submit"
+              onMouseEnter={(e) => handleSubmitHover(e, true)}
+              onMouseLeave={(e) => handleSubmitHover(e, false)}
+            >
+              Get Back to Me
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
       </div>
       <SubscribeForm />
       <Footer />
