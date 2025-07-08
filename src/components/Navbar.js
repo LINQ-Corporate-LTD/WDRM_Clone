@@ -234,7 +234,7 @@ const Navbar = ({ disableScrollEffect = false, forceScrolled = false }) => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex flex-1 justify-center items-center space-x-12 z-10 relative">
+        <nav className="hidden lg:flex flex-1 justify-center items-center space-x-12 z-10 relative pt-8">
           {navItems.map((item) => (
             <div
               key={item.name}
