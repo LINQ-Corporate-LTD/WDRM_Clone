@@ -4,7 +4,7 @@ import SubscribeForm from "./SubscribeForm";
 import Footer from "../Footer";
 
 const Faq = () => {
-  const [expandedQuestion, setExpandedQuestion] = useState(1);
+  const [expandedQuestion, setExpandedQuestion] = useState(null);
 
   const faqData = [
     {
