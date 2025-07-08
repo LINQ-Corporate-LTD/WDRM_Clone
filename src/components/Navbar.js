@@ -30,7 +30,7 @@ const navItems = [
     dropdown: [
       { name: "Latest News", href: "#downloads" },
       { name: "Media Partners", href: "media-partners" },
-      { name: "FAQ", href: "#media-kit" },
+      { name: "FAQ", href: "faqs" },
     ],
   },
   { name: "Contact Us", href: "contact-us" },
