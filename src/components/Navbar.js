@@ -13,9 +13,9 @@ const navItems = [
   },
   {
     name: "Speakers",
-    href: "#speakers",
+    href: "speakers",
     dropdown: [
-      { name: "Call For Presentations", href: "#become-sponsor" },
+      { name: "Call For Presentations", href: "speakers" },
       { name: "Featured Speakers", href: "#sponsor-benefits" },
     ],
   },
