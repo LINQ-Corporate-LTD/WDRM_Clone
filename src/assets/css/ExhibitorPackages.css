@@ -1,0 +1,334 @@
+        .pricing-section_ExhibitorPackages {
+            padding: 60px 0;
+            background-color: #1a1a1a;
+        }
+        
+        .section-title_ExhibitorPackages {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .section-subtitle_ExhibitorPackages {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+        
+        .pricing-table_ExhibitorPackages {
+            background-color: transparent;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: none;
+            border-spacing: 10px;
+        }
+        
+        .pricing-header_ExhibitorPackages {
+            display: flex;
+            /* background-color: #333; */
+            gap: 10px;
+            padding: 10px;
+            padding-bottom: 10px;
+        }
+        
+        .benefits-header_ExhibitorPackages {
+            flex: 2;
+            padding: 30px;
+            color: white;
+            /* background-color: #33333300; */
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .package-header_ExhibitorPackages {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .silver-header_ExhibitorPackages {
+            color: #ffffff;
+            background-color: #666;
+        }
+        
+        .gold-header_ExhibitorPackages {
+            color: #ffffff;
+            background-color: #f39c12;
+        }
+        
+        .platinum-header_ExhibitorPackages {
+            color: #ffffff;
+            background-color: #555;
+        }
+        
+        .pricing-row_ExhibitorPackages {
+            display: flex;
+            gap: 10px;
+            /* padding: 0 10px; */
+            margin-bottom: 0;
+            border-bottom: 1px solid #444;
+        }
+
+        .pricing-row_ExhibitorPackages:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .benefit-cell_ExhibitorPackages {
+            flex: 2;
+            padding: 15px 20px;
+            /* background-color: #2a2a2a; */
+            border-radius: 8px;
+        }
+        
+        .benefit-title_ExhibitorPackages {
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .benefit-description_ExhibitorPackages {
+            font-size: 0.9rem;
+            color: #e7e7e7;
+            line-height: 1.3;
+        }
+        
+        .package-cell {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #333;
+            /* border-radius: 8px; */
+        }
+        
+        .price-cell {
+            padding: 25px 15px;
+        }
+        
+        .price_ExhibitorPackages {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .original-price_ExhibitorPackages {
+            text-decoration: line-through;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .check-icon {
+            color: #1bbd41;
+            font-size: 1.2rem;
+        }
+        
+        .cross-icon {
+            color: #666;
+            font-size: 1.2rem;
+        }
+        
+        .book-btn_ExhibitorPackages {
+            background-color: #00baff;
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            font-weight: bold;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .book-btn_ExhibitorPackages:hover {
+            background-color: #00baff;
+            transform: translateY(-2px);
+        }
+        
+        .discount-text {
+            color: #202020;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+        
+        .space-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+
+        .sponsor-section {
+  background-color: #00baff;
+  padding: 50px 0;
+}
+
+.sponsor-container {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-title_ExhibitorPackages {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.sponsor-card_ExhibitorPackages {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  padding: 20px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sponsor-card_ExhibitorPackages:hover {
+  transform: translateY(-5px);
+  border: #161616;
+  background-color: #161616;
+}
+
+/* Fix: All text elements turn white on hover */
+.sponsor-card_ExhibitorPackages:hover .sponsor-title,
+
+.sponsor-card_ExhibitorPackages:hover .sponsor-description {
+  color: white !important;
+}
+
+.sponsor-card_ExhibitorPackages:hover .sponsor-price { color: #00baff !important;}
+
+.sponsor-card_ExhibitorPackages:hover .interest-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sponsor-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sponsor-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sponsor-price {
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  margin: 15px 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sponsor-description {
+  font-size: 0.8rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.4;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Fix: Removed bottom margin from button */
+.interest-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 0; /* Fixed: No bottom margin */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  font-family: "Montserrat", sans-serif;
+}
+
+.interest-btn:hover {
+  background: #007bff;
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-title_ExhibitorPackages {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .sponsor-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .sponsor-card_ExhibitorPackages {
+    height: auto;
+    min-height: 220px;
+  }
+
+  .sponsor-price {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sponsor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .sponsor-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+
+
+            
+       

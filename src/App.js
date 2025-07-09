@@ -14,6 +14,8 @@ import Faq from "./components/Faq";
 import CallForPresentation from "./components/CallForPresentation";
 import Speakers from "./components/Speakers";
 import TrendDescriptionPage from "./components/TrendDescriptionPage";
+import ExhibitorPackages from "./components/ExhibitorPackages";
+import NewsDescription from "./components/NewsDescription";
 
 function App() {
   return (
@@ -35,6 +37,9 @@ function App() {
             <Route path="speakers" element={<CallForPresentation />} />
             <Route path="featured-Speakers" element={<Speakers />} />
             <Route path="trenddescription/:slug" element={<TrendDescriptionPage />} />
+            <Route path="sponsor-packages" element={<ExhibitorPackages />} />
+            <Route path="newsdescription" element={<NewsDescription />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
