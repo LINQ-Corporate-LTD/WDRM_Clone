@@ -237,7 +237,7 @@
 .sponsor-title {
   font-weight: 700;
   font-size: 0.9rem;
-  color: #333;
+  color: #ffffff;
   text-align: center;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -257,7 +257,7 @@
 
 .sponsor-description {
   font-size: 0.8rem;
-  color: #555;
+  color: #ffffff;
   text-align: center;
   line-height: 1.4;
   flex-grow: 1;
@@ -269,7 +269,7 @@
 
 /* Fix: Removed bottom margin from button */
 .interest-btn {
-  background: #007bff;
+  background: #1fbaff;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -289,7 +289,7 @@
 }
 
 .interest-btn:hover {
-  background: #007bff;
+  background: #1fbaff;
   transform: scale(1.02);
 }
 
