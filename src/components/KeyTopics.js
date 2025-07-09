@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 const topics = [
   {
     title: "Evaluating financial strategies and public-private partnership models",
@@ -34,6 +34,7 @@ const topics = [
 ];
 
 const KeyTopics = () => {
+  const navigate = useNavigate();
   return (
     <section className="px-4 py-16 bg-white">
       <div className="max-w-7xl mx-auto text-center">
@@ -52,8 +53,8 @@ const KeyTopics = () => {
         </div>
         <div className="mt-10">
           <a
-            href="#program"
-            className="inline-block text-1xl bg-gray-200 hover:bg-black hover:text-white text-black font-extrabold py-3 px-6 rounded transition"
+            className="inline-block text-1xl bg-gray-200 text-black hover:bg-black hover:!text-white font-extrabold py-3 px-6 rounded transition"
+            onClick={() => navigate("/sponsor")}
           >
             VIEW PROGRAM
           </a>

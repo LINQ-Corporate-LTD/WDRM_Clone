@@ -13,6 +13,7 @@ import FeaturedSpeaker from "./components/FeaturedSpeaker";
 import Faq from "./components/Faq";
 import CallForPresentation from "./components/CallForPresentation";
 import Speakers from "./components/Speakers";
+import TrendDescriptionPage from "./components/TrendDescriptionPage";
 
 function App() {
   return (
@@ -33,8 +34,7 @@ function App() {
             <Route path="faqs" element={<Faq />} />
             <Route path="speakers" element={<CallForPresentation />} />
             <Route path="featured-Speakers" element={<Speakers />} />
-
-
+            <Route path="trenddescription" element={<TrendDescriptionPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

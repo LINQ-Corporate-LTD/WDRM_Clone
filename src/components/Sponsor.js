@@ -274,7 +274,7 @@ useEffect(() => {
       <Navbar forceScrolled />
       <div class="pt-[50px] pb-[30px]">
         <div class="exhibition-banner">
-          <div class="container-fluid">
+          <div class="container-fluid_sponsor">
             <div class="row align-items-center">
               <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-0">
                 <img
@@ -286,7 +286,7 @@ useEffect(() => {
 
               <div class="col-lg-6 col-md-12">
                 <div class="content-section">
-                  <h1 class="main-heading">
+                  <h1 class="main-heading_sponsor">
                     EXHIBIT YOUR SERVICES AT DESALINATION & RESOURCE RECOVERY
                     2025
                   </h1>

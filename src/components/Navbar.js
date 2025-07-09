@@ -174,12 +174,12 @@ const Navbar = ({ disableScrollEffect = false, forceScrolled = false }) => {
         {/* Register Button */}
         <div className="flex items-center z-10">
           <a
-            href="#register"
+            href="booking"
             className={`hidden md:inline-block font-extrabold py-4 px-12 rounded transition text-lg uppercase shadow-lg
               ${
                 effectiveScrolled
-                  ? "bg-[#00baff] text-black hover:bg-sky-300"
-                  : "bg-[#00baff] text-black hover:bg-white"
+                  ? "bg-[#00baff] text-black hover:bg-white hover:text-black"
+                  : "bg-[#00baff] text-black hover:bg-white hover:text-black"
               }`}
           >
             REGISTER

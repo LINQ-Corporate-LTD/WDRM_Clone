@@ -13,7 +13,7 @@ const RelatedEventsSection = () => {
         <div className="grid grid-cols-1 h-full md:grid-cols-3 gap-6">
           {/* Event 1 */}
           <a
-            href="#"
+            href="https://www.water-resource-recovery.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full outline-none focus:outline-none no-underline"
@@ -78,7 +78,7 @@ const RelatedEventsSection = () => {
           </a>
           {/* Event 2 */}
           <a
-            href="#"
+            href="https://www.membrane-technology-show.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full outline-none focus:outline-none no-underline"
@@ -141,7 +141,7 @@ const RelatedEventsSection = () => {
           </a>
           {/* Event 3 */}
           <a
-            href="#"
+            href="https://www.europe.pfas-summit.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full outline-none focus:outline-none no-underline"
