@@ -7,6 +7,11 @@ import Sponsors5 from "../../src/assets/images/Sponsor/5.png";
 import Sponsors6 from "../../src/assets/images/Sponsor/6.png";
 import Sponsors7 from "../../src/assets/images/Sponsor/sponsor-image (1).png";
 import Testimonials1 from "../../src/assets/images/Testimonials/top 2.3c8b10699a330d7a8730.webp";
+import Testimonials2 from "../../src/assets/images/Sponsor/sponsor-image (1).png";
+import Testimonials3 from "../../src/assets/images/testominal/testominal.webp";
+import Testimonials4 from "../../src/assets/images/testominal/testominal2.webp";
+import Testimonials5 from "../../src/assets/images/testominal/testominal3.webp";
+import Testimonials6 from "../../src/assets/images/testominal/testominal4.webp";
 import "../../src/assets/css/sponsor.css";
 import Navbar from "./Navbar";
 import SubscribeForm from "./SubscribeForm";
@@ -15,7 +20,100 @@ import LogoCarousel from "./LogoCarousel";
 
 
 const Sponsors = () => {
-    const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  const testimonialImage = [Testimonials3, Testimonials4, Testimonials5, Testimonials6]
+
+  const testimonials = [
+    {
+      name: "Cor Merks",
+      company: "Ramboll",
+      quote: "Very on-topic approach. Excellent networking opportunities.",
+    },
+    {
+      name: "Kelbij star",
+      company: "Deltares",
+      quote: "I met new parties that were active in this sector.",
+    },
+    {
+      name: "Steve Kaye",
+      company: "UKWIR",
+      quote: "It was a great showcase of cutting-edge technologies, with chances to network globally.",
+    },
+    {
+      name: "Matthijs Stel",
+      company: "Evides",
+      quote: "It offered ideas for applying new technologies across the entire water industry value chain.",
+    },
+    {
+      name: "Przemysław Zakościelny",
+      company: "vonRoll Infratec (services) AG",
+      quote: "It was an excellent opportunity to explore solutions and participate in meaningful discussions.",
+    },
+    {
+      name: "David Hurley",
+      company: "AVK UK",
+      quote: "It proved fantastic for sharing knowledge and discovering innovative products.",
+    },
+  ]
+
+
+  const allowedRow1and3Indexes = [0, 3]; // Testimonials3 & Testimonials6
+  const allowedRow2Indexes = [1, 2];     // Testimonials4 & Testimonials5
+
+  const [index13, setIndex13] = useState(0); // For row 1 and 3
+  const [row2Left, setRow2Left] = useState(0);
+  const [row2Right, setRow2Right] = useState(1);
+
+useEffect(() => {
+  // Row 1 and 3 update every 5s
+  const interval13 = setInterval(() => {
+    setIndex13(prev => (prev + 1) % allowedRow1and3Indexes.length);
+  }, 5000);
+
+  // Row 2 starts after 5s, then updates every 8s
+  const timeout2 = setTimeout(() => {
+    const updateRow2 = () => {
+      let left = Math.floor(Math.random() * allowedRow2Indexes.length);
+      let right;
+      do {
+        right = Math.floor(Math.random() * allowedRow2Indexes.length);
+      } while (right === left); // Ensure different images
+
+      setRow2Left(left);
+      setRow2Right(right);
+    };
+
+    updateRow2(); // Initial update at 5s
+
+    const interval2 = setInterval(updateRow2, 8000); // Every 8s after that
+
+    // Cleanup interval2 only
+    const cleanup = () => clearInterval(interval2);
+    window.addEventListener("beforeunload", cleanup);
+    return cleanup;
+  }, 5000);
+
+  // Cleanup both timers
+  return () => {
+    clearInterval(interval13);
+    clearTimeout(timeout2);
+  };
+}, []);
+
+  const row1Index = allowedRow1and3Indexes[index13];
+  const row3Index = allowedRow1and3Indexes[(index13 + 1) % allowedRow1and3Indexes.length];
+
+  const row1 = testimonials[row1Index];
+  const row3 = testimonials[row3Index];
+  const row2 = testimonials[allowedRow2Indexes[row2Left]];
+
+  const row1Image = testimonialImage[row1Index];
+  const row2ImageLeft = testimonialImage[allowedRow2Indexes[row2Left]];
+  const row2ImageRight = testimonialImage[allowedRow2Indexes[row2Right]];
+  const row3Image = testimonialImage[row3Index];
+
+
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
   useEffect(() => {
     const handleResize = () => {
@@ -170,7 +268,7 @@ const Sponsors = () => {
     // Add your form submission logic here
     console.log('Form submitted');
   };
-  
+
   return (
     <>
       <Navbar forceScrolled />
@@ -228,7 +326,7 @@ const Sponsors = () => {
               <div class="col-lg-4 col-md-6 col-12">
                 <div class="sponsor-card">
                   <div class="sponsor-logo">
-                    <img src={Sponsors1} alt="" />
+                    <img src={Sponsors1} alt="" className="w-1/2" />
                   </div>
                 </div>
               </div>
@@ -236,7 +334,7 @@ const Sponsors = () => {
               <div class="col-lg-4 col-md-6 col-12">
                 <div class="sponsor-card">
                   <div class="sponsor-logo electro-scan">
-                    <img src={Sponsors2} alt="" />
+                    <img src={Sponsors2} alt="" className="w-1/2" />
                   </div>
                 </div>
               </div>
@@ -244,7 +342,7 @@ const Sponsors = () => {
               <div class="col-lg-4 col-md-6 col-12">
                 <div class="sponsor-card">
                   <div class="sponsor-logo">
-                    <img src={Sponsors3} alt="" />
+                    <img src={Sponsors3} alt="" className="w-1/2" />
                   </div>
                 </div>
               </div>
@@ -252,7 +350,7 @@ const Sponsors = () => {
               <div class="col-lg-4 col-md-6 col-12">
                 <div class="sponsor-card">
                   <div class="sponsor-logo ">
-                    <img src={Sponsors4} alt="" />
+                    <img src={Sponsors4} alt="" className="w-1/2" />
                   </div>
                 </div>
               </div>
@@ -260,7 +358,7 @@ const Sponsors = () => {
               <div class="col-lg-4 col-md-6 col-12">
                 <div class="sponsor-card">
                   <div class="sponsor-logo ">
-                    <img src={Sponsors5} alt="" />
+                    <img src={Sponsors5} alt="" className="w-1/2" />
                   </div>
                 </div>
               </div>
@@ -268,7 +366,7 @@ const Sponsors = () => {
               <div class="col-lg-4 col-md-6 col-12">
                 <div class="sponsor-card">
                   <div class="sponsor-logo">
-                    <img src={Sponsors6} alt="" />
+                    <img src={Sponsors6} alt="" className="w-1/2" />
                   </div>
                 </div>
               </div>
@@ -278,7 +376,7 @@ const Sponsors = () => {
 
         <section class="exhibition-section">
           <div class="container">
-            <h1 class="section-title text-bold" style={{fontSize: "30px", paddingBottom: "20px", fontWeight: 800}}>WHY EXHIBIT AT THE SHOW?</h1>
+            <h1 class="section-title text-bold" style={{ fontSize: "30px", paddingBottom: "20px", fontWeight: 800 }}>WHY EXHIBIT AT THE SHOW?</h1>
 
             <div class="row g-4">
               <div class="col-lg-4 col-md-6">
@@ -530,221 +628,187 @@ const Sponsors = () => {
           </div>
         </section>
 
- <div style={sectionStyle}>
-      <div style={containerStyle}>
-        <div style={innerContainerStyle}>
-          <h2 style={headingStyle}>
-            stand out from the crowd
-          </h2>
-          <p style={paragraphStyle}>
-            Elevate your brand as an industry leader. Take advantage of
-            opportunities to deliver your comment directly to our audience,
-            boosting your visibility and standing in the market.
-          </p>
-          <form style={formStyle} onSubmit={handleFormSubmit}>
-            <div style={formRowStyle}>
-              <div style={inputContainerStyle}>
-                <input
-                  name="fullname"
-                  type="text"
-                  placeholder="Full Name *"
-                  style={inputStyle}
-                  required
-                />
-              </div>
-              <div style={inputContainerStyle}>
-                <input
-                  name="companyname"
-                  type="text"
-                  placeholder="Company Name *"
-                  style={inputStyle}
-                  required
-                />
-              </div>
-            </div>
-            
-            <div style={formRowStyle}>
-              <div style={inputContainerStyle}>
-                <input
-                  name="mobilenumber"
-                  type="tel"
-                  placeholder="Mobile Number *"
-                  style={inputStyle}
-                  required
-                />
-              </div>
-              <div style={inputContainerStyle}>
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email Address *"
-                  style={inputStyle}
-                  required
-                />
-              </div>
-            </div>
-            
-            <div style={textareaContainerStyle}>
-              <textarea
-                name="comment"
-                placeholder="Comment"
-                cols={30}
-                rows={6}
-                style={textareaStyle}
-              />
-            </div>
-            
-            <button
-              style={submitButtonStyle}
-              type="submit"
-              onMouseEnter={(e) => handleSubmitHover(e, true)}
-              onMouseLeave={(e) => handleSubmitHover(e, false)}
-            >
-              submit
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-        <section class="networking-section">
-          <div className="container">
-            <div class="">
-              <h2 className="text-black text-[30px] font-extrabold my-12 p-0 text-center uppercase">
-                they've attended our events
+        <div style={sectionStyle}>
+          <div style={containerStyle}>
+            <div style={innerContainerStyle}>
+              <h2 style={headingStyle}>
+                stand out from the crowd
               </h2>
-              <div class="row">
-                <div class="col-md-8">
-                  <img
-                    src={Testimonials1}
-                    alt="Business professionals examining desalination equipment models"
-                    class="w-100 h-100"
+              <p style={paragraphStyle}>
+                Elevate your brand as an industry leader. Take advantage of
+                opportunities to deliver your comment directly to our audience,
+                boosting your visibility and standing in the market.
+              </p>
+              <form style={formStyle} onSubmit={handleFormSubmit}>
+                <div style={formRowStyle}>
+                  <div style={inputContainerStyle}>
+                    <input
+                      name="fullname"
+                      type="text"
+                      placeholder="Full Name *"
+                      style={inputStyle}
+                      required
+                    />
+                  </div>
+                  <div style={inputContainerStyle}>
+                    <input
+                      name="companyname"
+                      type="text"
+                      placeholder="Company Name *"
+                      style={inputStyle}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div style={formRowStyle}>
+                  <div style={inputContainerStyle}>
+                    <input
+                      name="mobilenumber"
+                      type="tel"
+                      placeholder="Mobile Number *"
+                      style={inputStyle}
+                      required
+                    />
+                  </div>
+                  <div style={inputContainerStyle}>
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="Email Address *"
+                      style={inputStyle}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div style={textareaContainerStyle}>
+                  <textarea
+                    name="comment"
+                    placeholder="Comment"
+                    cols={30}
+                    rows={6}
+                    style={textareaStyle}
                   />
                 </div>
 
-                <div class="col-md-4 p-0">
-                  <div class="testimonial-section w-100 h-100">
-                    <div className="p-5">
-                      <div class="quote-icon">
-                        <i class="fas fa-quote-left"></i>
-                      </div>
-                      <div class="testimonial-text">
-                        Very on-topic approach. Excellent networking
-                        opportunities.
-                      </div>
-                      <div class="testimonial-author">Cor Merks</div>
-                      <div class="testimonial-company">Ramboll</div>
-                    </div>
+                <button
+                  style={submitButtonStyle}
+                  type="submit"
+                  onMouseEnter={(e) => handleSubmitHover(e, true)}
+                  onMouseLeave={(e) => handleSubmitHover(e, false)}
+                >
+                  submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <section className="networking-section">
+          <div className="container">
+            <h2 className="text-black text-[30px] font-extrabold my-12 p-0 text-center uppercase">
+              they've attended our events
+            </h2>
+
+            {/* ROW 1 */}
+            <div className="row">
+              <div className="col-md-8">
+                <img src={row1Image} alt={row1.name} className="w-100 h-100" />
+              </div>
+              <div className="col-md-4 p-0">
+                <div className="testimonial-section w-100 h-100">
+                  <div className="p-5">
+                    <div className="testimonial-text">{row1.quote}</div>
+                    <div className="testimonial-author">{row1.name}</div>
+                    <div className="testimonial-company">{row1.company}</div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="row">
-                <div class="col-md-4">
-                  <img
-                    src={Testimonials1}
-                    alt="Business professionals examining desalination equipment models"
-                    class="w-100 h-100"
-                  />
-                </div>
-
-                <div class="col-md-4 p-0">
-                  <div class="testimonial-section w-100 h-100">
-                    <div className="p-5">
-                      <div class="quote-icon">
-                        <i class="fas fa-quote-left"></i>
-                      </div>
-                      <div class="testimonial-text">
-                        Very on-topic approach. Excellent networking
-                        opportunities.
-                      </div>
-                      <div class="testimonial-author">Cor Merks</div>
-                      <div class="testimonial-company">Ramboll</div>
-                    </div>
+            {/* ROW 2 */}
+            <div className="row">
+              <div className="col-md-4">
+                <img src={row2ImageLeft} alt="Left image" className="w-100 h-100" />
+              </div>
+              <div className="col-md-4 p-0">
+                <div className="testimonial-section w-100 h-100">
+                  <div className="p-5">
+                    <div className="testimonial-text">{row2.quote}</div>
+                    <div className="testimonial-author">{row2.name}</div>
+                    <div className="testimonial-company">{row2.company}</div>
                   </div>
-                </div>
-                <div class="col-md-4">
-                  <img
-                    src={Testimonials1}
-                    alt="Business professionals examining desalination equipment models"
-                    class="w-100 h-100"
-                  />
                 </div>
               </div>
+              <div className="col-md-4">
+                <img src={row2ImageRight} alt="Right image" className="w-100 h-100" />
+              </div>
+            </div>
 
-              <div class="row">
-                <div class="col-md-4 p-0">
-                  <div class="testimonial-section w-100 h-100">
-                    <div className="p-5">
-                      <div class="quote-icon">
-                        <i class="fas fa-quote-left"></i>
-                      </div>
-                      <div class="testimonial-text">
-                        Very on-topic approach. Excellent networking
-                        opportunities.
-                      </div>
-                      <div class="testimonial-author">Cor Merks</div>
-                      <div class="testimonial-company">Ramboll</div>
-                    </div>
+
+            {/* ROW 3 */}
+            <div className="row">
+              <div className="col-md-4 p-0">
+                <div className="testimonial-section w-100 h-100">
+                  <div className="p-5">
+                    <div className="testimonial-text">{row3.quote}</div>
+                    <div className="testimonial-author">{row3.name}</div>
+                    <div className="testimonial-company">{row3.company}</div>
                   </div>
                 </div>
-
-                <div class="col-md-8">
-                  <img
-                    src={Testimonials1}
-                    alt="Business professionals examining desalination equipment models"
-                    class="w-100 h-100"
-                  />
-                </div>
+              </div>
+              <div className="col-md-8">
+                <img src={row3Image} alt={row3.name} className="w-100 h-100" />
               </div>
             </div>
           </div>
         </section>
       </div>
-        <LogoCarousel />
-                    <section class="contact-section_mediaPartbers">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <h2 class="contact-heading_mediaPartbers" style={{fontSize: "30px"}}>
-                                GET IN TOUCH TO BOOK YOUR TRADE SHOW BOOTH
-                            </h2>
+      <LogoCarousel />
+      <section class="contact-section_mediaPartbers">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <h2 class="contact-heading_mediaPartbers" style={{ fontSize: "30px" }}>
+                GET IN TOUCH TO BOOK YOUR TRADE SHOW BOOTH
+              </h2>
 
-                            <div class="row g-4">
-                                <div class="col-md-6 ">
-                                    <div class="contact-card_mediaPartbers">
-                                        <h3 class="contact-name_mediaPartbers pb-1 text-capitalize">LEE NAVARRO</h3>
-                                        <div class="contact-info_mediaPartbers">
-                                            <i class="fas fa-envelope"></i>
-                                            <a href="mailto:lee.navarro@big-hub.com">lee.navarro@big-hub.com</a>
-                                        </div>
-                                        <div class="contact-info_mediaPartbers">
-                                            <i class="fas fa-phone"></i>
-                                            <a href="tel:+12065820128">+1 206 582 0128</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 ">
-                                    <div class="contact-card_mediaPartbers">
-                                        <h3 class="contact-name_mediaPartbers pb-1 text-capitalize">Sean Collins</h3>
-                                        <div class="contact-info_mediaPartbers">
-                                            <i class="fas fa-envelope"></i>
-                                            <a href="mailto:lee.navarro@big-hub.com">lee.navarro@big-hub.com</a>
-                                        </div>
-                                        <div class="contact-info_mediaPartbers">
-                                            <i class="fas fa-phone"></i>
-                                            <a href="tel:+12065820128">+1 206 582 0128</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
+              <div class="row g-4">
+                <div class="col-md-6 ">
+                  <div class="contact-card_mediaPartbers">
+                    <h3 class="contact-name_mediaPartbers pb-1 text-capitalize">LEE NAVARRO</h3>
+                    <div class="contact-info_mediaPartbers">
+                      <i class="fas fa-envelope"></i>
+                      <a href="mailto:lee.navarro@big-hub.com">lee.navarro@big-hub.com</a>
                     </div>
+                    <div class="contact-info_mediaPartbers">
+                      <i class="fas fa-phone"></i>
+                      <a href="tel:+12065820128">+1 206 582 0128</a>
+                    </div>
+                  </div>
                 </div>
-            </section>
+
+                <div class="col-md-6 ">
+                  <div class="contact-card_mediaPartbers">
+                    <h3 class="contact-name_mediaPartbers pb-1 text-capitalize">Sean Collins</h3>
+                    <div class="contact-info_mediaPartbers">
+                      <i class="fas fa-envelope"></i>
+                      <a href="mailto:lee.navarro@big-hub.com">lee.navarro@big-hub.com</a>
+                    </div>
+                    <div class="contact-info_mediaPartbers">
+                      <i class="fas fa-phone"></i>
+                      <a href="tel:+12065820128">+1 206 582 0128</a>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <SubscribeForm />
       <Footer />
     </>

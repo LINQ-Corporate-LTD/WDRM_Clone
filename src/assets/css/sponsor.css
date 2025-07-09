@@ -127,10 +127,13 @@
         }
 
         .sponsor-logo img {
-            width: auto;
-            height: auto;
-            display: flex;
             justify-content: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            max-width: 100%;
+            height: auto;
         }
 
 
@@ -528,3 +531,4 @@
         .col-md-4 {
             padding: 0;
         }
+        
