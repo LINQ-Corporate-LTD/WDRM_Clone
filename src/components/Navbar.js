@@ -4,36 +4,36 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   {
     name: "Event Details",
-    href: "booking",
+    href: "/booking",
     dropdown: [
-      { name: "Register & Book Now", href: "booking" },
-      { name: "Program 2025", href: "agenda" },
-      { name: "Who Should Attend", href: "who-should-attend" },
+      { name: "Register & Book Now", href: "/booking" },
+      { name: "Program 2025", href: "/agenda" },
+      { name: "Who Should Attend", href: "/who-should-attend" },
     ],
   },
   {
     name: "Speakers",
-    href: "speakers",
+    href: "/speakers",
     dropdown: [
-      { name: "Call For Presentations", href: "speakers" },
-      { name: "Featured Speakers", href: "featured-Speakers" },
+      { name: "Call For Presentations", href: "/speakers" },
+      { name: "Featured Speakers", href: "/featured-Speakers" },
     ],
   },
   {
     name: "Sponsors",
-    href: "sponsor",
+    href: "/sponsor",
   },
-  { name: "Venue", href: "venue" },
+  { name: "Venue", href: "/venue" },
   {
     name: "Resources",
     href: "#resources",
     dropdown: [
       { name: "Latest News", href: "#downloads" },
-      { name: "Media Partners", href: "media-partners" },
-      { name: "FAQ", href: "faqs" },
+      { name: "Media Partners", href: "/media-partners" },
+      { name: "FAQ", href: "/faqs" },
     ],
   },
-  { name: "Contact Us", href: "contact-us" },
+  { name: "Contact Us", href: "/contact-us" },
 ];
 
 const logoWhite =

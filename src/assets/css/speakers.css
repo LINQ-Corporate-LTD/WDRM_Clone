@@ -81,7 +81,7 @@
         }
         
         @media (max-width: 768px) {
-            .section-title {
+            .featured_speakers_section-title {
                 font-size: 2rem;
                 margin-bottom: 30px;
             }

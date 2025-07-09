@@ -71,7 +71,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .section-title {
+    .section-title_mediaPartbers {
         font-size: 2rem;
     }
 

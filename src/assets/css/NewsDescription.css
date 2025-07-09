@@ -313,7 +313,7 @@
         } */
         
         @media (max-width: 768px) {
-            .section-title {
+            .section-title_NewsDescription {
                 font-size: 2rem;
                 margin-bottom: 30px;
             }

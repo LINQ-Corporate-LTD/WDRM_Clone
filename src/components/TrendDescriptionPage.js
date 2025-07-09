@@ -1,14 +1,23 @@
 import { useState } from "react";
-import { useLocation, useParams  } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import FeaturedSpeaker from "./FeaturedSpeaker";
 import SubscribeForm from "./SubscribeForm";
 import Footer from "../Footer";
+import Sponsors1 from "../../src/assets/images/Sponsor/1.jpg";
+import Sponsors2 from "../../src/assets/images/Sponsor/2.png";
+import Sponsors3 from "../../src/assets/images/Sponsor/3.png";
+import Sponsors4 from "../../src/assets/images/Sponsor/4.png";
+import Sponsors5 from "../../src/assets/images/Sponsor/5.png";
+import Sponsors6 from "../../src/assets/images/Sponsor/6.png";
+import "../../src/assets/css/News.css"
 const TrendDescriptionPage = () => {
   const location = useLocation();
   const { slug } = useParams();
-  const [activeTab, setActiveTab] = useState(slug?.replace(/-/g, " ").toUpperCase() || "BRINE VALORISATION");
-  console.log('activeTab: ', activeTab);
+  const [activeTab, setActiveTab] = useState(
+    slug?.replace(/-/g, " ").toUpperCase() || "BRINE VALORISATION"
+  );
+  console.log("activeTab: ", activeTab);
   const [isExpanded, setIsExpanded] = useState(false);
   const styles = {
     title: {
@@ -282,6 +291,105 @@ const TrendDescriptionPage = () => {
             }
           `}</style>
         </div>
+
+        <div class="sponsors-section">
+          <h1 class="sponsors-title">OUR SPONSORS</h1>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="sponsor-card">
+                  <div class="sponsor-logo">
+                    <img src={Sponsors1} alt="" className="w-1/2" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="sponsor-card">
+                  <div class="sponsor-logo electro-scan">
+                    <img src={Sponsors2} alt="" className="w-1/2" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="sponsor-card">
+                  <div class="sponsor-logo">
+                    <img src={Sponsors3} alt="" className="w-1/2" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="sponsor-card">
+                  <div class="sponsor-logo ">
+                    <img src={Sponsors4} alt="" className="w-1/2" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="sponsor-card">
+                  <div class="sponsor-logo ">
+                    <img src={Sponsors5} alt="" className="w-1/2" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="sponsor-card">
+                  <div class="sponsor-logo">
+                    <img src={Sponsors6} alt="" className="w-1/2" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid agenda-section">
+        <div class="container">
+          <h1 class="section-title_news">TOPICS ON THE AGENDA</h1>
+
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="topic-card">
+                <h3 class="topic-title">
+                  MOBILE DESALINATION PLANTS WITH EFFICIENT SOLUTIONS TO REDUCE
+                  OPERATING COSTS
+                </h3>
+                <div class="topic-date">Day 1: MONDAY, 27 OCTOBER, 2025</div>
+                <div class="topic-time">13:30 - 13:55</div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="topic-card">
+                <h3 class="topic-title">
+                  SEAWATER INTAKES PREFILTRATION FOR DESALINATION PROJECTS
+                </h3>
+                <div class="topic-date">Day 1: MONDAY, 27 OCTOBER, 2025</div>
+                <div class="topic-time">14:00 - 14:25</div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="topic-card">
+                <h3 class="topic-title">
+                  PERSPECTIVES ON SEAWATER DESALINATION
+                </h3>
+                <div class="topic-date">Day 1: MONDAY, 27 OCTOBER, 2025</div>
+                <div class="topic-time">15:00 - 15:25</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button class="view-more-btn_news">VIEW MORE TOPICS</button>
+          </div>
+        </div>
+      </div>
       </div>
       <SubscribeForm />
       <Footer />
