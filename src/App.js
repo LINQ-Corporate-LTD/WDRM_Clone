@@ -16,6 +16,7 @@ import Speakers from "./components/Speakers";
 import TrendDescriptionPage from "./components/TrendDescriptionPage";
 import ExhibitorPackages from "./components/ExhibitorPackages";
 import NewsDescription from "./components/NewsDescription";
+import SpeakerProfile from "./components/SpeakersProfile";
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
             <Route path="trenddescription/:slug" element={<TrendDescriptionPage />} />
             <Route path="sponsor-packages" element={<ExhibitorPackages />} />
             <Route path="newsdescription" element={<NewsDescription />} />
-
+            <Route path="speakerprofile" element={<SpeakerProfile />} />
           </Route>
         </Routes>
       </BrowserRouter>

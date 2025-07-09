@@ -265,6 +265,7 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
   .highlights-title,
   .program-title {
     font-size: 2rem;
@@ -324,6 +325,7 @@ body {
     font-size: 1rem;
   }
 }
+
 .form-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -465,6 +467,7 @@ body {
   display: flex;
   min-height: 100vh;
 }
+
 .benefits-container-2 {
   display: flex;
   min-height: 100vh;
@@ -547,11 +550,10 @@ body {
   transition: all 0.3s ease;
   text-transform: uppercase;
   width: 100%;
-  max-width: 300px;
 }
 
 .view-program-btn:hover {
-  background-color: #444;
+  background-color: #c9bdbd;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -577,6 +579,7 @@ body {
   .benefits-container {
     flex-direction: column;
   }
+
   .benefits-container-2 {
     flex-direction: column;
   }
@@ -648,6 +651,7 @@ body {
     font-size: 13px;
   }
 }
+
 @media (max-width: 768px) {
   .featured-speakers-title {
     font-size: 2.5rem !important;
@@ -719,7 +723,7 @@ body {
   background-color: #00000333 !important;
   transform: scale(1.1) !important;
 }
- 
+
 .swiper-button-prev::after,
 .swiper-button-next::after {
   font-size: 18px !important;
@@ -741,6 +745,7 @@ body {
   transform: translateY(-8px) !important;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15) !important;
 }
+
 .water-event-container {
   background: linear-gradient(135deg, #00baff 0%, #5bc0eb 100%);
   min-height: 100vh;
@@ -1112,33 +1117,32 @@ body {
 .speaker-profile-container {
   display: flex;
   margin: 0 auto;
+  padding-left: 100px;
+  padding-right: 100px;
   background-color: #e8e8e8;
-  min-height: 100vh;
+  box-sizing: border-box;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .profile-image-section {
+  background-color: #e5e5e5;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://www.desalination-resource-recovery.com/api/images/1748008658078.png');
 }
 
-.profile-image {
+.profile-image-section img {
   width: 100%;
-  max-width: 400px;
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  max-width: 880px;
+  display: block;
 }
 
 .profile-content {
   flex: 1;
-  background-color: #ffffff;
-  padding: 60px 50px;
+  background-color: #e5e5e5;
+  padding: 92px 150px 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1168,7 +1172,7 @@ body {
 .speaker-title {
   font-size: 20px;
   font-weight: 600;
-  color: #333333;
+  color: #000000;
   margin-bottom: 0;
 }
 
@@ -1176,7 +1180,7 @@ body {
   margin-bottom: 50px;
 }
 
-.section-title {
+.biography-section-title {
   font-size: 20px;
   font-weight: 700;
   color: #000000;
@@ -1207,7 +1211,8 @@ body {
 }
 
 .view-program-btn:hover {
-  background-color: #333333;
+  background-color: #e5e5e5;
+  color: black;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -1217,124 +1222,195 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+.w-100 {
+  width: 100%;
+}
+
 /* Responsive Design */
-@media screen and (max-width: 1024px) {
+
+/* Large Desktop */
+@media screen and (max-width: 1200px) {
   .speaker-profile-container {
-    margin: 0 20px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
-
+  
   .profile-content {
-    padding: 50px 40px;
-  }
-
-  .speaker-name {
-    font-size: 42px;
+    padding: 70px 100px 80px;
   }
 }
 
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .speaker-profile-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .profile-content {
+    padding: 50px 60px;
+  }
+  
+  .speaker-name {
+    font-size: 42px;
+  }
+  
+  .profile-image-section img {
+    max-width: 600px;
+  }
+}
+
+/* Small Tablet */
 @media screen and (max-width: 768px) {
   .speaker-profile-container {
     flex-direction: column;
-    margin: 0 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-
+  
   .profile-image-section {
-    padding: 30px;
+    order: 1;
+    min-height: 300px;
+    padding: 20px;
   }
-
-  .profile-image {
-    max-width: 300px;
+  
+  .profile-image-section img {
+    max-width: 100%;
+    height: auto;
+    min-height: 250px;
   }
-
+  
   .profile-content {
+    order: 2;
     padding: 40px 30px;
   }
-
+  
   .speaker-name {
     font-size: 36px;
   }
-
+  
   .profile-title {
     font-size: 16px;
   }
-
+  
   .speaker-title {
     font-size: 18px;
   }
-
-  .section-title {
+  
+  .biography-section-title {
     font-size: 18px;
   }
-
+  
   .biography-text {
     font-size: 15px;
   }
-
+  
   .view-program-btn {
     padding: 16px 35px;
     font-size: 15px;
   }
 }
 
+/* Mobile */
 @media screen and (max-width: 480px) {
+  .pt-\[90px\] {
+    padding-top: 60px !important;
+  }
+  
+  .pb-\[30px\] {
+    padding-bottom: 20px !important;
+  }
+  
   .speaker-profile-container {
-    margin: 0 5px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
-
+  
   .profile-image-section {
-    padding: 20px;
+    padding: 15px;
+    min-height: 250px;
   }
-
-  .profile-image {
-    max-width: 250px;
+  
+  .profile-image-section img {
+    min-height: 200px;
   }
-
+  
   .profile-content {
     padding: 30px 20px;
   }
-
+  
   .speaker-name {
     font-size: 28px;
     letter-spacing: 1px;
   }
-
+  
   .profile-title {
     font-size: 14px;
   }
-
+  
   .speaker-title {
     font-size: 16px;
   }
-
-  .section-title {
+  
+  .biography-section-title {
     font-size: 16px;
     letter-spacing: 1px;
   }
-
+  
   .biography-text {
     font-size: 14px;
     line-height: 1.5;
   }
-
+  
   .view-program-btn {
     padding: 14px 30px;
     font-size: 14px;
     letter-spacing: 1px;
     width: 100%;
     text-align: center;
+    align-self: stretch;
   }
 }
 
-@media screen and (max-width: 320px) {
-  .speaker-name {
-    font-size: 24px;
+/* Extra Small Mobile */
+@media screen and (max-width: 360px) {
+  .speaker-profile-container {
+    padding-left: 5px;
+    padding-right: 5px;
   }
-
+  
   .profile-content {
     padding: 25px 15px;
   }
-
+  
+  .speaker-name {
+    font-size: 24px;
+  }
+  
   .biography-text {
     font-size: 13px;
+  }
+  
+  .profile-image-section {
+    min-height: 200px;
+  }
+  
+  .profile-image-section img {
+    min-height: 180px;
+  }
+}
+
+/* Very Small Screens */
+@media screen and (max-width: 320px) {
+  .speaker-name {
+    font-size: 22px;
+  }
+  
+  .profile-content {
+    padding: 20px 10px;
+  }
+  
+  .biography-text {
+    font-size: 12px;
   }
 }

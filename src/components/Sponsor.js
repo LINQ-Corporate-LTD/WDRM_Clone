@@ -6,8 +6,6 @@ import Sponsors4 from "../../src/assets/images/Sponsor/4.png";
 import Sponsors5 from "../../src/assets/images/Sponsor/5.png";
 import Sponsors6 from "../../src/assets/images/Sponsor/6.png";
 import Sponsors7 from "../../src/assets/images/Sponsor/sponsor-image (1).png";
-import Testimonials1 from "../../src/assets/images/Testimonials/top 2.3c8b10699a330d7a8730.webp";
-import Testimonials2 from "../../src/assets/images/Sponsor/sponsor-image (1).png";
 import Testimonials3 from "../../src/assets/images/testominal/testominal.webp";
 import Testimonials4 from "../../src/assets/images/testominal/testominal2.webp";
 import Testimonials5 from "../../src/assets/images/testominal/testominal3.webp";
