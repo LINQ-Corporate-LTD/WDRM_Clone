@@ -1,0 +1,267 @@
+      body {
+          background-color: #ffffff;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 600;
+      }
+
+      .article-card {
+          background: white;
+          /* border-radius: 12px; */
+          overflow: hidden;
+          /* box-shadow: 0 2px 8px rgba(0,0,0,0.1); */
+          margin-bottom: 24px;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      /* .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        } */
+
+      .article-image {
+          max-width: 370px;
+          height: 100%;
+          object-fit: cover;
+          flex-shrink: 0;
+      }
+
+      .article-content {
+
+          padding: 20px;
+          flex: 1;
+      }
+
+      .article-header {
+
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 12px;
+      }
+
+      .category-tag {
+          background-color: #00ccff00;
+          color: rgb(0, 195, 255);
+          padding: 4px 0px;
+          border-radius: 4px;
+          font-size: 12px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+      }
+
+      .article-date {
+          color: rgb(0, 195, 255);
+          font-size: 14px;
+          font-weight: 500;
+      }
+
+      .article-title {
+          font-family: "Montserrat", sans-serif;
+          font-size: 24px;
+          font-weight: 800;
+          color: #333;
+          margin-bottom: 12px;
+          line-height: 1.3;
+      }
+
+      .article-description {
+          color: #666;
+          font-size: 16px;
+          line-height: 1.5;
+          margin: 0;
+      }
+
+      .container-custom {
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 40px 20px;
+      }
+
+      @media (max-width: 768px) {
+          .article-card {
+              flex-direction: column !important;
+          }
+
+          .article-image {
+              width: 100%;
+              height: 200px;
+          }
+
+          .article-title {
+              font-size: 20px;
+          }
+
+          .article-header {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 8px;
+          }
+      }
+
+      .pagination-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 3rem;
+          gap: 0.5rem;
+      }
+
+      .pagination-btn {
+          width: 40px;
+          height: 40px;
+          border: none;
+          background: #e9ecef;
+          color: #6c757d;
+          border-radius: 2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.2s ease;
+      }
+
+      .pagination-btn:hover {
+          background: #dee2e6;
+      }
+
+      .pagination-btn.active {
+          background: rgb(0, 195, 255);
+          color: white;
+      }
+
+      .pagination-btn:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+      }
+
+      @media (min-width: 768px) {
+          .article-card {
+              display: flex;
+              align-items: stretch;
+          }
+
+          .article-image-container {
+              flex: 0 0 300px;
+          }
+
+          .article-image {
+              height: 100%;
+              min-height: 200px;
+          }
+
+          .article-content {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+          }
+      }
+
+
+      .NewsListing_darkContainer__Pa9P7 {
+          align-items: center;
+          background-color: black;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 100px 0px;
+          width: 100%;
+      }
+
+      .NewsListing_topNewsContainerOuter__PGH7l {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 50px;
+          max-width: 1200px;
+          width: 90%;
+      }
+
+      .NewsListing_top_news_heding__ffzau {
+          color: rgb(255, 255, 255);
+          font-size: 36px;
+          font-weight: 800;
+          margin-bottom: 24px;
+          text-align: left;
+      }
+
+
+
+
+
+      .agenda-section {
+          padding: 60px 0;
+      }
+
+      .section-title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #2c3e50;
+          text-align: center;
+          margin-bottom: 50px;
+          letter-spacing: 1px;
+      }
+
+      .topic-card {
+          background: #e9ecef;
+          border-radius: 2px;
+          padding: 40px 43px;
+          max-width: 500px;
+          height: 100%;
+          border: none;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        } */
+
+      .topic-title {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: #2c3e50;
+          line-height: 1.4;
+          margin-bottom: 25px;
+          text-transform: uppercase;
+      }
+
+      .topic-date {
+          color: #266dae;
+          font-size: 0.95rem;
+          margin-bottom: 8px;
+      }
+
+      .topic-time {
+          color: #495057;
+          font-size: 1.1rem;
+          font-weight: 600;
+      }
+
+      .view-more-btn_news {
+          background: transparent;
+          border: 2px solid #131313;
+          color: #131313;
+          padding: 12px 40px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          transition: all 0.3s ease;
+          margin-top: 40px;
+      }
+
+      .view-more-btn_news:hover {
+          background: #131313;
+          color: white;
+          border-color: #131313;
+      }
+
+      @media (max-width: 768px) {
+          .section-title {
+              font-size: 2rem;
+          }
+
+          .topic-card {
+              margin-bottom: 20px;
+          }
+      }
