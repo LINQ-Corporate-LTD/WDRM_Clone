@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { useLocation, useParams  } from "react-router-dom";
 import Navbar from "./Navbar";
 import FeaturedSpeaker from "./FeaturedSpeaker";
 import SubscribeForm from "./SubscribeForm";
 import Footer from "../Footer";
 const TrendDescriptionPage = () => {
-  const [activeTab, setActiveTab] = useState("BRINE VALORISATION");
+  const location = useLocation();
+  const { slug } = useParams();
+  const [activeTab, setActiveTab] = useState(slug?.replace(/-/g, " ").toUpperCase() || "BRINE VALORISATION");
+  console.log('activeTab: ', activeTab);
   const [isExpanded, setIsExpanded] = useState(false);
   const styles = {
     title: {
@@ -32,7 +36,7 @@ const TrendDescriptionPage = () => {
       longtext:
         "<p>Brine valorisation has become a top strategic priority for decision-makers in the desalination industry. What is driving this transformation? The advancement of extraction technologies that turn once-discarded brine into a valuable source of minerals such as sodium, lithium, and magnesium. At the Desalination &amp; Resource Recovery 2025 conference, explore how the industry is shifting from traditional brine disposal to resource recovery. Experts agree that rethinking brine management is now among the sector's most significant challenges and opportunities, marking a pivotal moment in the future of water treatment.</p>",
       title: "Brine Valorisation",
-      slug: "brine-valorisation",
+      slug: "BRINE VALORISATION",
       createdAt: "2023-11-13T14:48:49.000Z",
     },
     {
@@ -41,7 +45,7 @@ const TrendDescriptionPage = () => {
       longtext:
         "<p>The Desalination &amp; Resource Recovery 2025 conference will be a pivotal global forum where utility leaders, desalination experts, and industry innovators come together to tackle the urgent challenges of water scarcity and aging infrastructure while optimising costs and minimising environmental impacts. Driven by evolving market dynamics, rapid urbanisation, and the need for sustainable water supplies, the desalination industry is at a turning point. At the core of this transformation is the integration of renewable energy with cutting-edge energy recovery systems, an innovative approach that is enhancing operational efficiency and reshaping the future of water treatment and resource management.</p>",
       title: "Water-Energy Nexus",
-      slug: "water-energy-nexus",
+      slug: "WATER ENERGY NEXUS",
       createdAt: "2023-11-13T14:49:31.000Z",
     },
     {
@@ -50,7 +54,7 @@ const TrendDescriptionPage = () => {
       longtext:
         "<p>Breakthrough innovations in membrane technology are shaping the future of water treatment and resource recovery. Next-generation membranes, such as graphene-based and nanocomposite systems, are revolutionising desalination by dramatically improving filtration efficiency, increasing salt rejection rates, and extending operational lifespans. As water scarcity, climate change, and rapid urbanisation drive demands for sustainable water solutions, utility leaders and desalination experts are increasingly embracing these advanced technologies. What began as early research and pilot projects in membrane innovation has now evolved into essential solutions that optimise costs, reduce environmental impact, and address the desalination industry's most pressing challenges.</p>",
       title: "Next-Gen Membranes",
-      slug: "next-gen-membranes",
+      slug: "NEXT GEN MEMBRANES",
       createdAt: "2023-11-13T14:50:07.000Z",
     },
     {
@@ -59,7 +63,7 @@ const TrendDescriptionPage = () => {
       longtext:
         "<p>Leaders in desalination and resource recovery will take the stage at the Desalination &amp; Resource Recovery 2025 forum. The event will create unique synergies between advanced water treatment processes and AI-driven systems, paving the way for a more sustainable and efficient water future. In a time of shifting market dynamics, water scarcity, climate change, urbanisation, and ageing infrastructure, the event unites utility leaders, desalination experts, operators, and policymakers from around the world to exchange insights and drive innovative collaborations.</p>",
       title: "AI-Driven Systems",
-      slug: "ai-driven-systems",
+      slug: "AI DRIVEN SYSTEMS",
       createdAt: "2023-11-13T14:50:37.000Z",
     },
     {
@@ -68,7 +72,7 @@ const TrendDescriptionPage = () => {
       longtext:
         "<p>Decarbonisation and resource recovery are rapidly reshaping the desalination industry as operators and stakeholders work to reduce the carbon footprint of water production while ensuring a sustainable supply. In today's technology-driven landscape, the industry is undergoing a transformative shift, integrating advanced digital systems with innovative process controls. Amid growing concerns over water scarcity and climate change, industry leaders seek greater transparency and real-time analytics to optimise efficiency and minimise environmental impacts. This evolving approach is driving data-driven decision-making and new business models that enhance sustainability and resilience.</p>",
       title: "Decarbonisation",
-      slug: "decarbonisation",
+      slug: "DECARBONISATION",
       createdAt: "2023-11-13T14:51:01.000Z",
     },
   ];
@@ -107,7 +111,10 @@ const TrendDescriptionPage = () => {
 
         <div className="container-fluid p-0">
           {/* Navigation Tabs */}
-          <div className="row no-gutters bg-light" style={{paddingTop:'100px', paddingBottom:'100px'}}>
+          <div
+            className="row no-gutters bg-light"
+            style={{ paddingTop: "80px", paddingBottom: "80px" }}
+          >
             <div className="col-12">
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 {tabContent.map((tab, index) => (
@@ -139,36 +146,34 @@ const TrendDescriptionPage = () => {
           <div className="row no-gutters">
             <div className="col-12">
               <div
-                className="bg-dark text-white py-5 transition-all"
+                className="text-white py-5 transition-all"
                 style={{
                   minHeight: isExpanded ? "auto" : "400px",
-                  background:
-                    "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)",
+                  background: "#000",
                   transition: "all 0.5s ease-in-out",
                 }}
               >
-                <div className="container">
+                <div>
                   <div className="row justify-content-center">
                     <div className="col-lg-10 col-xl-8">
                       <div className="text-center text-md-left px-3">
-                        <h1
-                          className="display-4 font-weight-bold mb-4 text-uppercase"
+                        <h2
+                          className="mb-4 p-0 text-uppercase"
                           style={{
-                            fontSize: window.innerWidth < 768 ? "2rem" : "3rem",
-                            letterSpacing: "2px",
+                            fontSize: "36px",
+                            fontWeight: "800",
                           }}
                         >
                           {currentTab.title}
-                        </h1>
+                        </h2>
 
                         <div
-                          className="lead mb-4 content-text"
+                          className="mb-4 content-text"
                           style={{
-                            fontSize:
-                              window.innerWidth < 768 ? "1rem" : "1.1rem",
-                            lineHeight: "1.7",
-                            color: "#e0e0e0",
-                            transition: "all 0.3s ease-in-out",
+                            fontSize: "18px",
+                            lineHeight: "36px",
+                            color: "#ffffff",
+                            fontWeight: "500",
                           }}
                           dangerouslySetInnerHTML={{
                             __html: isExpanded

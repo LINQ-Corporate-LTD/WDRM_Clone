@@ -34,7 +34,7 @@ function App() {
             <Route path="faqs" element={<Faq />} />
             <Route path="speakers" element={<CallForPresentation />} />
             <Route path="featured-Speakers" element={<Speakers />} />
-            <Route path="trenddescription" element={<TrendDescriptionPage />} />
+            <Route path="trenddescription/:slug" element={<TrendDescriptionPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
