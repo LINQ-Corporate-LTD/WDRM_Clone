@@ -60,7 +60,7 @@ const LogoCarousel = () => {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-between logo-slider-container">
+    <div className="d-flex align-items-center justify-content-between logo-slider-container" style={{backgroundColor: "#ffffff"}}>
       <div>
         {/* Left Button */}
         <button className="border-0" style={{background:'none',fontSize: '3rem',border: 'none',outline: 'none',boxShadow: 'none'}} onClick={() => sliderRef.current.slickPrev()}>&#8592;</button>
