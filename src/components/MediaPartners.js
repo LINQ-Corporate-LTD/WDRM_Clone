@@ -11,7 +11,7 @@ const MediaPartners = () => {
     return (
         <>
         <Navbar forceScrolled/>
-        <div class="pt-[90px] pb-[30px]">
+        <div class="pt-[90px]">
             
             <section class="press-section">
                 <div class="container">

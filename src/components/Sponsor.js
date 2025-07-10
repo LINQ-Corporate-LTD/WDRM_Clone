@@ -270,7 +270,7 @@ useEffect(() => {
   return (
     <>
       <Navbar forceScrolled />
-      <div class="pt-[50px] pb-[30px]">
+      <div class="pt-[50px]">
         <div class="exhibition-banner">
           <div class="container-fluid_sponsor">
             <div class="row align-items-center">
