@@ -40,7 +40,7 @@ function App() {
             <Route path="trenddescription/:slug" element={<TrendDescriptionPage />} />
             <Route path="sponsor-packages" element={<ExhibitorPackages />} />
             <Route path="newsdescription" element={<NewsDescription />} />
-            <Route path="speakerprofile" element={<SpeakerProfile />} />
+            <Route path="speakerprofile/:slug" element={<SpeakerProfile />} />
           </Route>
         </Routes>
       </BrowserRouter>
