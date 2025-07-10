@@ -18,7 +18,7 @@ const FeaturedSpeaker = () => {
       companyimage: "https://www.desalination-resource-recovery.com/api/images/1748008565625.png",
       bioimage:
         "https://www.desalination-resource-recovery.com/api/images/1748008565626.png",
-      homeimage: "images/1748008565630.png",
+      homeimage: "https://www.desalination-resource-recovery.com/api/images/1748008565630.png",
       slug: "maher-al-kaabi",
       createdAt: "2025-05-23T13:56:05.000Z",
     },
@@ -33,7 +33,7 @@ const FeaturedSpeaker = () => {
       companyimage: "https://www.desalination-resource-recovery.com/api/images/1748008658077.png",
       bioimage:
         "https://www.desalination-resource-recovery.com/api/images/1748008658078.png",
-      homeimage: "images/1748008658079.png",
+      homeimage: "https://www.desalination-resource-recovery.com/api/images/1748008658079.png",
       slug: "ahmed-yousry",
       createdAt: "2025-05-23T13:57:38.000Z",
     },
@@ -48,7 +48,7 @@ const FeaturedSpeaker = () => {
       companyimage: "https://www.desalination-resource-recovery.com/api/images/1748263603496.png",
       bioimage:
         "https://www.desalination-resource-recovery.com/api/images/1748263603497.png",
-      homeimage: "images/1748263603503.png",
+      homeimage: "https://www.desalination-resource-recovery.com/api/images/1748263603503.png",
       slug: "oren-heymans",
       createdAt: "2025-05-26T12:46:43.000Z",
     },
@@ -63,7 +63,7 @@ const FeaturedSpeaker = () => {
       companyimage: "https://www.desalination-resource-recovery.com/api/images/1748263714868.png",
       bioimage:
         "https://www.desalination-resource-recovery.com/api/images/1748263714869.png",
-      homeimage: "images/1748263714873.png",
+      homeimage: "https://www.desalination-resource-recovery.com/api/images/1748263714873.png",
       slug: "anton-borodastov",
       createdAt: "2025-05-26T12:48:34.000Z",
     },
@@ -78,7 +78,7 @@ const FeaturedSpeaker = () => {
       companyimage: "https://www.desalination-resource-recovery.com/api/images/1748435281015.png",
       bioimage:
         "https://www.desalination-resource-recovery.com/api/images/1748435281020.png",
-      homeimage: "images/1748435281024.png",
+      homeimage: "https://www.desalination-resource-recovery.com/api/images/1748435281024.png",
       slug: "ignacio-rodriguez",
       createdAt: "2025-05-28T12:28:01.000Z",
     },
@@ -93,7 +93,7 @@ const FeaturedSpeaker = () => {
       companyimage: "https://www.desalination-resource-recovery.com/api/images/1748435872390.png",
       bioimage:
         "https://www.desalination-resource-recovery.com/api/images/1748435846118.png",
-      homeimage: "images/1748435846121.png",
+      homeimage: "https://www.desalination-resource-recovery.com/api/images/1748435846121.png",
       slug: "lars-spth",
       createdAt: "2025-05-28T12:37:26.000Z",
     },
@@ -108,7 +108,7 @@ const FeaturedSpeaker = () => {
       companyimage: "https://www.desalination-resource-recovery.com/api/images/1748435943865.png",
       bioimage:
         "https://www.desalination-resource-recovery.com/api/images/1748435943868.png",
-      homeimage: "images/1748435943873.png",
+      homeimage: "https://www.desalination-resource-recovery.com/api/images/1748435943873.png",
       slug: "robert-bryniak",
       createdAt: "2025-05-28T12:39:03.000Z",
     },
@@ -123,11 +123,12 @@ const FeaturedSpeaker = () => {
       companyimage: "https://www.desalination-resource-recovery.com/api/images/1748951845721.png",
       bioimage:
         "https://www.desalination-resource-recovery.com/api/images/1748951845722.png",
-      homeimage: "images/1748951845728.png",
+      homeimage: "https://www.desalination-resource-recovery.com/api/images/1748951845728.png",
       slug: "david-stephenson",
       createdAt: "2025-05-28T14:03:21.000Z",
     },
   ];
+
 
   // Custom Arrow Components
   const CustomPrevArrow = ({ onClick }) => (
