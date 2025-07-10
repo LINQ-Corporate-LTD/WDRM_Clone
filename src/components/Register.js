@@ -32,7 +32,7 @@ const Register = () => {
   return (
     <>
       <Navbar forceScrolled />
-      <div class="pt-[90px] pb-[30px]">
+      <div class="pt-[90px]">
         <div className="register_page">
           <section class="registration-section">
             <div class="container-fluid registration-section-fluid">

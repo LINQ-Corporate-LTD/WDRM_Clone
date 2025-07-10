@@ -113,10 +113,10 @@ const Speakers = () => {
     bottom: 0,
     left: 0,
     right: 0,
-    background:
-      "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)",
-    padding: "25px 20px 20px",
-    color: "white",
+    // background:
+    //   "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)",
+    // padding: "25px 20px 20px",
+    // color: "white",
   };
 
   const speakerNameStyle = {
@@ -366,11 +366,11 @@ const Speakers = () => {
                   <img
                     src={speaker.image || "/placeholder.svg"}
                     alt={speaker.name}
-                    className="speaker-image"
+                    // className="speaker-image"
                     style={speakerImageStyle}
                   />
                   {/* <div className="speaker-info" style={speakerOverlayStyle}> */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" style={speakerOverlayStyle} />
                         <div className="absolute bottom-0 left-0 right-0 p-6">
                           <p
                             className={`text-white font-bold transition-all duration-300 text-lg mb-1`}
