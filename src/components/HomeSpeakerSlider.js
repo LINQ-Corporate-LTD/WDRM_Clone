@@ -138,7 +138,7 @@ const HomeSpeakerSlider = () => {
 
 
                         {/* Expanded Info Overlay */}
-                        {activeSpeaker === speaker && (
+                        {isCenter && activeSpeaker === speaker && (
                           <div
                             className={`absolute inset-0 bg-white z-50 transition-all duration-500 ${isClosing ? 'animate-slideDown' : 'animate-slideUp'
                               }`}
@@ -171,11 +171,11 @@ const HomeSpeakerSlider = () => {
                                   {speaker.bio || "This is a short speaker biography or description. You can populate this from your API or CMS."}
                                 </p>
                               </div>
-                                <div className="">
-                                  <button className="text-[#FF4B4B] font-bold text-sm uppercase">
-                                    VIEW SPEAKER’S PROFILE →
-                                  </button>
-                                </div>
+                              <div className="">
+                                <button className="text-[#FF4B4B] font-bold text-sm uppercase">
+                                  VIEW SPEAKER’S PROFILE →
+                                </button>
+                              </div>
                             </div>
                           </div>
                         )}
