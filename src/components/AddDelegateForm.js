@@ -459,7 +459,7 @@ const CompanyRegistrationForm = () => {
           ></img>
         </div>
       </div>
-      <div className="container mx-auto px-4 mt-4">
+      <div className="container mx-auto px-4 mt-4 mb-4">
         <div className="flex justify-center">
           <div className="w-full max-w-4xl">
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -848,12 +848,61 @@ const CompanyRegistrationForm = () => {
                     </a>
                   </label>
                 </div>
-                <button type="submit" className="btn-submit">
+                <button
+                  type="submit"
+                  className="btn-submit"
+                  onClick={() => navigate("/booking-form")}
+                >
                   Submit
                 </button>
               </div>
             </form>
           </div>
+        </div>
+      </div>
+      <div
+        style={{
+          alignItems: "center",
+          backgroundColor: "#181818",
+          display: "flex",
+          justifyContent: "center",
+          height: "80px",
+          width: "100%",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1070px",
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "space-between",
+            width: "90%",
+          }}
+        >
+          <p
+            style={{
+              color: "#fff",
+              fontSize: "14px",
+              fontWeight: "500",
+              margin: "0",
+              padding: "0",
+            }}
+          >
+            <span>Privacy Policy</span>
+            <span class="PageForm_divide__vwhn0">|</span>IQ International PTe.
+            LTD
+          </p>
+          <p
+            style={{
+              color: "#fff",
+              fontSize: "14px",
+              fontWeight: "500",
+              margin: "0",
+              padding: "0",
+            }}
+          >
+            ©2025 Desalination &amp; Resource Recovery 2025
+          </p>
         </div>
       </div>
     </div>
