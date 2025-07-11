@@ -54,7 +54,7 @@ const KeyTopics = () => {
         <div className="mt-10">
           <a
             className="inline-block text-1xl bg-gray-200 text-black hover:bg-black hover:!text-white font-extrabold py-3 px-6 rounded transition"
-            onClick={() => navigate("/sponsor")}
+            onClick={() => navigate("/agenda")}
           >
             VIEW PROGRAM
           </a>

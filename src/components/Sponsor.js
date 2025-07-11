@@ -622,7 +622,7 @@ useEffect(() => {
             </section>
 
             <div class="text-center">
-              <button class="btn view-packages-btn">VIEW PACKAGES</button>
+              <button onClick={() => navigate("/sponsor-packages")} class="btn view-packages-btn">VIEW PACKAGES</button>
             </div>
           </div>
         </section>

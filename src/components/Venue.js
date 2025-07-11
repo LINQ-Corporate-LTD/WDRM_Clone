@@ -9,8 +9,10 @@ import Navbar from "./Navbar";
 import SubscribeForm from "./SubscribeForm";
 import Footer from "../Footer";
 import LogoCarousel from "./LogoCarousel";
+import { useNavigate } from "react-router-dom";
 
 const Venue = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar forceScrolled />
@@ -109,7 +111,12 @@ const Venue = () => {
               </h2>
 
               <div class="contact-cards">
-                <div class="contact-card">
+                <div class="contact-card" style={{cursor:'pointer'}} onClick={() => {
+                    window.open(
+                      "https://www.google.com/maps/dir//Baniyas+Rd+-+Port+Saeed+-+Riggat+Al+Buteen+-+Dubai+-+United+Arab+Emirates/@25.2614781,55.2313155,63457m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x3e5f5d98998eab01:0x43788f91ec9688bb!2m2!1d55.313717!2d25.261501?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D",
+                      "_blank"
+                    );
+                  }}>
                   <h3 class="card-title">Location</h3>
                   <div class="location-info">
                     <div class="venue-name d-flex">
@@ -144,7 +151,15 @@ const Venue = () => {
               </div>
 
               <div class="cta-button">
-                <a href="#" class="btn-take-me" onclick="openDirections()">
+                <a
+                  class="btn-take-me"
+                  onClick={() => {
+                    window.open(
+                      "https://www.google.com/maps/dir//Baniyas+Rd+-+Port+Saeed+-+Riggat+Al+Buteen+-+Dubai+-+United+Arab+Emirates/@25.2614781,55.2313155,63457m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x3e5f5d98998eab01:0x43788f91ec9688bb!2m2!1d55.313717!2d25.261501?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D",
+                      "_blank"
+                    );
+                  }}
+                >
                   Take Me There
                 </a>
               </div>

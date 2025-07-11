@@ -4,7 +4,9 @@ import Navbar from "./Navbar";
 import SubscribeForm from "./SubscribeForm";
 import Footer from "../Footer";
 import FeaturedSpeaker from "./FeaturedSpeaker";
+import { useNavigate } from "react-router-dom";
 const WhoShouldAttend = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = React.useState("core");
 
   const coreAttendees = [
@@ -380,6 +382,7 @@ const WhoShouldAttend = () => {
 
                 <button
                   className="btn btn-dark btn-block font-weight-bold py-3"
+                  onClick={() => navigate("/agenda")}
                   style={{
                     backgroundColor: "#2c2c2c",
                     border: "none",

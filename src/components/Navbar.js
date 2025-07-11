@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   {
     name: "Event Details",
-    href: "/booking",
+    // href: "/booking",
     dropdown: [
       { name: "Register & Book Now", href: "/booking" },
       { name: "Program 2025", href: "/agenda" },
@@ -13,7 +13,7 @@ const navItems = [
   },
   {
     name: "Speakers",
-    href: "/speakers",
+    // href: "/speakers",
     dropdown: [
       { name: "Call For Presentations", href: "/speakers" },
       { name: "Featured Speakers", href: "/featured-Speakers" },
@@ -26,7 +26,7 @@ const navItems = [
   { name: "Venue", href: "/venue" },
   {
     name: "Resources",
-    href: "#resources",
+    // href: "#resources",
     dropdown: [
       { name: "Latest News", href: "#downloads" },
       { name: "Media Partners", href: "/media-partners" },

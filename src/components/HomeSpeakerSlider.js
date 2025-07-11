@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../src/assets/css/homeSpeakerSlider.css";
-
+import { useNavigate } from "react-router-dom";
 import speaker1 from "../../src/assets/images/speaker1.png";
 import speaker2 from "../../src/assets/images/speaker2.png";
 import speaker3 from "../../src/assets/images/speaker3.png";
@@ -51,6 +51,7 @@ const speakers = [
 ];
 
 const HomeSpeakerSlider = () => {
+  const navigate = useNavigate();
   const [centerIndex, setCenterIndex] = useState(5);
   const [activeSpeaker, setActiveSpeaker] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
@@ -85,7 +86,7 @@ const HomeSpeakerSlider = () => {
               <h2 className="text-3xl sm:text-4xl font-bold text-white uppercase leading-tight">
                 MEET OUR <span className="text-[#00baff] block sm:inline">FEATURED SPEAKERS</span>
               </h2>
-              <button className="flex items-center mt-6 text-[#00baff] text-xl font-semibold cursor-pointer uppercase hover:underline transition-all">
+              <button className="flex items-center mt-6 text-[#00baff] text-xl font-semibold cursor-pointer uppercase hover:underline transition-all" onClick={() => navigate("/featured-Speakers")}>
                 Show all speakers
                 <svg className="ml-3 w-6 h-4" width="24" height="16" viewBox="0 0 24 16" fill="none">
                   <path d="M23.2071 8.70711C23.5976 8.31658 23.5976 7.68342 23.2071 7.29289L16.8431 0.928932C16.4526 0.538408 15.8195 0.538408 15.4289 0.928932C15.0384 1.31946 15.0384 1.95262 15.4289 2.34315L21.0858 8L15.4289 13.6569C15.0384 14.0474 15.0384 14.6805 15.4289 15.0711C15.8195 15.4616 16.4526 15.4616 16.8431 15.0711L23.2071 8.70711ZM0 9H22.5V7H0V9Z" fill="#00baff" />

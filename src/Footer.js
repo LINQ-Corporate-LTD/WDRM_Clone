@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const navigate = useNavigate();
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
   useEffect(() => {
@@ -192,42 +193,42 @@ const Footer = () => {
           </div>
           <div style={navContainerStyle}>
             <div style={navColumnStyle}>
-              <a style={navLinkStyle} href="/home">
+              <a style={navLinkStyle} onClick={() => navigate("/")}>
                 Event Details
               </a>
-              <a style={navLinkStyle} href="/home">
+              <a style={navLinkStyle} onClick={() => navigate("/speakers")}>
                 Speakers
               </a>
             </div>
             <div style={navColumnStyle}>
-              <a style={navLinkStyle} href="/home">
+              <a style={navLinkStyle} onClick={() => navigate("/sponsor")}>
                 Sponsors
               </a>
-              <a style={navLinkStyle} href="/home">
+              <a style={navLinkStyle} onClick={() => navigate("/venue")}>
                 Venue
               </a>
             </div>
             <div style={navColumnStyle}>
-              <a style={navLinkStyle} href="/home">
+              <a style={navLinkStyle} onClick={() => navigate("/agenda")}>
                 Program
               </a>
-              <a style={navLinkStyle} href="/home">
+              <a style={navLinkStyle} onClick={() => navigate("/who-should-attend")}>
                 Benefits
               </a>
             </div>
             <div style={navColumnStyle}>
-              <a style={navLinkStyle} href="/home">
+              <a style={navLinkStyle} onClick={() => navigate("/media-partners")}>
                 Media
               </a>
-              <a style={navLinkStyle} href="/home">
+              <a style={navLinkStyle} onClick={() => navigate("/contact-us")}>
                 Contact Us
               </a>
             </div>
             <div style={navColumnStyle}>
-              <a style={navLinkStyle} href="/home">
+              <a style={navLinkStyle} onClick={() => navigate("/venue")}>
                 Gallery
               </a>
-              <a style={navLinkStyle} href="/home">
+              <a style={navLinkStyle} onClick={() => navigate("/faqs")}>
                 FAQ
               </a>
             </div>
@@ -305,7 +306,7 @@ const Footer = () => {
               <a style={contentLinkStyle} href="/who-should-attend">
                 Benefits
               </a>
-              <a style={contentLinkStyle} href="/faq">
+              <a style={contentLinkStyle} href="/faqs">
                 FAQ
               </a>
             </div>
