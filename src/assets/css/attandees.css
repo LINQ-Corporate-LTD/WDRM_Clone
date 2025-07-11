@@ -1,0 +1,62 @@
+/* Main wrapper */
+.leader-slider-section {
+    padding: 3rem 0;
+    background-color: #2c2c2c;
+    position: relative;
+    overflow: visible !important;
+}
+
+.leader-slider-section .container {
+    position: relative;
+    overflow: visible !important;
+    z-index: 1;
+}
+
+/* Section title */
+.leader-title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+}
+
+/* Leader card */
+.leader-card {
+    background: white;
+    height: 250px;
+    min-height: 250px;
+    max-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Image inside card */
+.leader-img {
+    max-height: 80px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Swiper arrows color */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+}
+
+
+.swiper-button-prev {
+    left: -70px;
+    /* move further if needed */
+}
+
+.swiper-button-next {
+    right: -70px;
+}

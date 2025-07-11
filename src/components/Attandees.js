@@ -5,6 +5,12 @@ import SubscribeForm from "./SubscribeForm";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "../assets/css/attandees.css"
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 
 const pastAttandeesArr = [
   {
@@ -214,16 +220,48 @@ const settings = {
   ],
 };
 
-const Attandees = () => {
-  const chunkArray = (array, chunkSize) => {
-    const chunks = [];
-    for (let i = 0; i < array.length; i += chunkSize) {
-      chunks.push(array.slice(i, i + chunkSize));
-    }
-    return chunks;
-  };
 
-  const leaderChunks = chunkArray(leadersArr, 6);
+const settings1 = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  arrows: true,
+  slidesToScroll: 1,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
+const chunkArray = (array, size) => {
+  const result = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+  return result;
+};
+
+const leaderChunks = chunkArray(leadersArr, 6);
+
+
+const Attandees = () => {
+
+  // const chunkArray = (array, chunkSize) => {
+  //   const chunks = [];
+  //   for (let i = 0; i < array.length; i += chunkSize) {
+  //     chunks.push(array.slice(i, i + chunkSize));
+  //   }
+  //   return chunks;
+  // };
+
+  // const leaderChunks = chunkArray(leadersArr, 6);
   return (
     <>
       <Navbar forceScrolled />
@@ -294,128 +332,54 @@ const Attandees = () => {
         </div>
       </div>
 
-      <div className="py-5" style={{ backgroundColor: "#2c2c2c"}}>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h2
-              className="text-center text-white font-weight-bold mb-5"
-              style={{ fontSize: "2.5rem", letterSpacing: "2px" }}
-            >
-              MEET THE LEADERS
-            </h2>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <div className="leaders-slider-wrapper px-3">
-              <Slider {...settings}>
-                {leaderChunks.map((chunk, chunkIndex) => (
-                  <div key={chunkIndex}>
-                    <div className="slide-content">
-                      {/* First Row */}
-                      <div className="row mb-4">
-                        {chunk.slice(0, 3).map((leader) => (
-                          <div
-                            key={leader.id}
-                            className="col-lg-4 col-md-4 col-sm-4 mb-3"
-                          >
-                            <div
-                              className="bg-white d-flex align-items-center justify-content-center p-3 m-4 leader-card"
-                              style={{
-                                height: "250px !important",
-                                minHeight: "250px",
-                                maxHeight: "250px",
-                                borderRadius: "2px",
-                                boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-                              }}
-                            >
-                              <img
-                                src={leader.logo || "/placeholder.svg"}
-                                alt={leader.name}
-                                className="img-fluid"
-                                style={{
-                                  maxHeight: "80px",
-                                  maxWidth: "100%",
-                                  objectFit: "contain",
-                                }}
-                              />
-                            </div>
-                          </div>
-                        ))}
+      <div className="leader-slider-section" style={{ overflow: "visible" }}>
+        <div className="container" style={{ overflow: "visible", position: "relative" }}>
+          <h2 className="leader-title">MEET THE LEADERS</h2>
+
+          <Swiper
+            modules={[Navigation]}
+            navigation
+            loop={true}
+            slidesPerView={1}
+            spaceBetween={10}
+            className="custom-leader-swiper"
+          >
+            {leaderChunks.map((chunk, index) => (
+              <SwiperSlide key={index}>
+                <div className="container">
+                  <div className="row">
+                    {chunk.slice(0, 3).map((leader) => (
+                      <div key={leader.id} className="col-lg-4 col-md-4 col-sm-4 mb-3">
+                        <div className="leader-card">
+                          <img
+                            src={leader.logo}
+                            alt={leader.name}
+                            className="leader-img"
+                          />
+                        </div>
                       </div>
-                      
-                      {/* Second Row */}
-                      <div className="row">
-                        {chunk.slice(3, 6).map((leader) => (
-                          <div
-                            key={leader.id}
-                            className="col-lg-4 col-md-4 col-sm-4 mb-3"
-                          >
-                            <div
-                              className="bg-white d-flex align-items-center justify-content-center p-3 m-4 leader-card"
-                              style={{
-                                height: "250px !important",
-                                minHeight: "250px",
-                                maxHeight: "250px",
-                                borderRadius: "2px",
-                                boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-                              }}
-                            >
-                              <img
-                                src={leader.logo || "/placeholder.svg"}
-                                alt={leader.name}
-                                className="img-fluid"
-                                style={{
-                                  maxHeight: "80px",
-                                  maxWidth: "100%",
-                                  objectFit: "contain",
-                                }}
-                              />
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    ))}
                   </div>
-                ))}
-              </Slider>
-            </div>
-          </div>
+
+                  <div className="row">
+                    {chunk.slice(3, 6).map((leader) => (
+                      <div key={leader.id} className="col-lg-4 col-md-4 col-sm-4 mb-3">
+                        <div className="leader-card">
+                          <img
+                            src={leader.logo}
+                            alt={leader.name}
+                            className="leader-img"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
-      
-      {/* Add this CSS to ensure height consistency */}
-      <style jsx>{`
-        .leader-card {
-          height: 250px !important;
-          min-height: 250px !important;
-          max-height: 250px !important;
-          box-sizing: border-box;
-        }
-        
-        .leaders-slider-wrapper .slick-slide {
-          height: auto;
-        }
-        
-        .leaders-slider-wrapper .slick-track {
-          display: flex;
-          align-items: stretch;
-        }
-        
-        .slide-content {
-          height: 100%;
-        }
-        
-        /* Override any Bootstrap responsive height changes */
-        @media (max-width: 768px) {
-          .leader-card {
-            height: 250px !important;
-            min-height: 250px !important;
-          }
-        }
-      `}</style>
-    </div>
       <SubscribeForm />
       <Footer />
     </>
