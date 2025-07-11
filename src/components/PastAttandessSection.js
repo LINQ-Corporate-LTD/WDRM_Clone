@@ -77,7 +77,7 @@ const PastAttandessSection = () => {
                 Deltares
               </li>
             </ul>
-            <a href="#" className="text-black mt-4 flex items-center hover:underline text-sm font-bold">
+            <a onClick={() => navigate("/attandees")} style={{cursor:'pointer'}} className="text-black mt-4 flex items-center hover:underline text-sm font-bold">
               SHOW MORE ATTENDEES
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
