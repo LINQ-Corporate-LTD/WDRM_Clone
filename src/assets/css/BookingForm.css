@@ -1,0 +1,165 @@
+        
+        .section-header_BookingForm {
+            background-color: #e9ecef;
+            padding: 12px 20px;
+            margin: 0;
+            font-weight: 600;
+            color: #495057;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .section-content_BookingForm {
+            background-color: white;
+            padding: 20px;
+            border-radius: 0 0 8px 8px;
+            border: 1px solid #dee2e6;
+            border-top: none;
+        }
+        
+        .addon-item_BookingForm {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f1f3f4;
+        }
+        
+        .addon-item_BookingForm:last-child {
+            border-bottom: none;
+        }
+        
+        .addon-checkbox_BookingForm {
+            margin-right: 12px;
+        }
+        
+        .addon-text_BookingForm {
+            flex-grow: 1;
+            color: #495057;
+        }
+        
+        .addon-price_BookingForm {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .payment-cards_BookingForm {
+            display: flex;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .payment-cards_BookingForm img {
+            height: 24px;
+            border-radius: 4px;
+        }
+        
+        .card-input_BookingForm {
+            border: none;
+            border-bottom: 2px solid #dee2e6;
+            border-radius: 0;
+            padding: 10px 0;
+            background: transparent;
+        }
+        
+        .card-input_BookingForm:focus {
+            border-bottom-color: #007bff;
+            box-shadow: none;
+            background: transparent;
+        }
+        
+        .pay-button_BookingForm {
+            background-color: #272727;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .pay-button_BookingForm:hover {
+            background-color: #e7e7e7;
+            color: #272727;
+            transition: 0.4s;
+        }
+        
+        .security-text_BookingForm {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+        
+        /* .delegate-pass {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            border-radius: 12px;
+            padding: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+         */
+        /* .delegate-pass::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            background: repeating-linear-gradient(
+                0deg,
+                #00bcd4 0px,
+                #00bcd4 4px,
+                transparent 4px,
+                transparent 8px
+            );
+        } */
+        
+        .pass-title_BookingForm {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+        
+        .pass-type_BookingForm {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #00bcd4;
+        }
+        
+        .order-summary_BookingForm {
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .summary-row_BookingForm {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .summary-row_BookingForm .total {
+            font-weight: 600;
+            color: #495057;
+            font-size: 1rem;
+            border-top: 1px solid #dee2e6;
+            padding-top: 15px;
+            margin-top: 10px;
+        }
+        
+        .discount-input_BookingForm {
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin: 15px 0;
+        }
+        
+        .ticket-count_BookingForm {
+            color: #6c757d;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
