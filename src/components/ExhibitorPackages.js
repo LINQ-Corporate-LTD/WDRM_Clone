@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import '../../src/assets/css/ExhibitorPackages.css'
 import Sponsors7 from "../../src/assets/images/Sponsor/sponsor-image (1).png";
 import Navbar from "./Navbar";
@@ -12,6 +13,7 @@ import Testimonials6 from "../../src/assets/images/testominal/testominal4.webp";
 
 
 const ExhibitorPackages = () => {
+    const navigate = useNavigate();
     const sponsorPackages = [
         {
             title: "Lanyard Sponsor",
@@ -207,7 +209,7 @@ const ExhibitorPackages = () => {
                                         class="exhibit-btn_sponsor mt-5"
                                         onclick="handleExhibitClick()"
                                     >
-                                        EXHIBIT NOW
+                                        SPONSOR NOW
                                     </button>
                                 </div>
                             </div>
@@ -387,7 +389,7 @@ const ExhibitorPackages = () => {
                             <div class="pricing-row_ExhibitorPackages">
                                 <div class="benefit-cell_ExhibitorPackages"></div>
                                 <div class="package-cell">
-                                    <button class="book-btn_ExhibitorPackages">BOOK YOUR BOOTH</button>
+                                    <button class="book-btn_ExhibitorPackages" onClick={() => navigate("/addsponsordelegate")}>BOOK YOUR BOOTH</button>
                                 </div>
                                 <div class="package-cell">
                                     <button class="book-btn_ExhibitorPackages">BOOK YOUR BOOTH</button>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Sponsors1 from "../../src/assets/images/Sponsor/1.jpg";
 import Sponsors2 from "../../src/assets/images/Sponsor/2.png";
 import Sponsors3 from "../../src/assets/images/Sponsor/3.png";
@@ -18,7 +19,7 @@ import LogoCarousel from "./LogoCarousel";
 
 
 const Sponsors = () => {
-
+const navigate = useNavigate();
   const testimonialImage = [Testimonials3, Testimonials4, Testimonials5, Testimonials6]
 
   const testimonials = [
@@ -306,7 +307,7 @@ useEffect(() => {
 
                   <button
                     class="exhibit-btn_sponsor mt-5"
-                    onclick="handleExhibitClick()"
+                    onClick={() => navigate("/sponsor-packages")}
                   >
                     EXHIBIT NOW
                   </button>
