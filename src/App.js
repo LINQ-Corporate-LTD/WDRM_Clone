@@ -18,6 +18,7 @@ import ExhibitorPackages from "./components/ExhibitorPackages";
 import NewsDescription from "./components/NewsDescription";
 import SpeakerProfile from "./components/SpeakersProfile";
 import Attandees from "./components/Attandees";
+import AddDelegateForm from "./components/AddDelegateForm";
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
             <Route path="newsdescription" element={<NewsDescription />} />
             <Route path="speakerprofile/:slug" element={<SpeakerProfile />} />
             <Route path="attandees" element={<Attandees />} />
+            <Route path="adddelegate" element={<AddDelegateForm />} />
+
           </Route>
         </Routes>
       </BrowserRouter>

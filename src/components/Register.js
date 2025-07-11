@@ -9,8 +9,10 @@ import Navbar from "./Navbar";
 import SubscribeForm from "./SubscribeForm";
 import Footer from "../Footer";
 import LogoCarousel from "./LogoCarousel";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [countSuperEarlyBird, setCountSuperEarlyBird] = useState(1);
   const [countEarlyBird, setCountEarlyBird] = useState(1);
   const [countRegularPrice, setCountRegularPrice] = useState(1);
@@ -136,7 +138,7 @@ const Register = () => {
                     </div>
                   </div>
                   <div class="pricing-footer">
-                    <button class="register-btn register-now">
+                    <button class="register-btn register-now" onClick={() => navigate("/adddelegate")}>
                       REGISTER NOW
                     </button>
                   </div>
