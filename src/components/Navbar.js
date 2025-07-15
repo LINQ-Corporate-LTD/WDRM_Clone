@@ -175,7 +175,7 @@ const Navbar = ({ disableScrollEffect = false, forceScrolled = false }) => {
         <div className="flex items-center z-10">
           <a
             href="booking"
-            className={`hidden md:inline-block font-extrabold py-4 px-12 rounded transition text-lg uppercase shadow-lg
+            className={`hidden md:inline-block font-extrabold py-3 px-12 transition text-lg uppercase shadow-lg
               ${
                 effectiveScrolled
                   ? "bg-[#00baff] text-black hover:bg-white hover:text-black"

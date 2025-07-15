@@ -1,33 +1,34 @@
-import img1 from "../../src/assets/images/VenueGallery/1747979445814.jpg";
-import img2 from "../../src/assets/images/VenueGallery/1747979452318.jpg";
-import img3 from "../../src/assets/images/VenueGallery/1747979457233.jpg";
-import img4 from "../../src/assets/images/VenueGallery/1747979462165.jpg";
-import img5 from "../../src/assets/images/VenueGallery/1747979468189.jpg";
-import img6 from "../../src/assets/images/VenueGallery/1747979489675.png";
-import "../../src/assets/css/venue.css";
+import img1 from "../assets/images/VenueGallery/1747979445814.jpg";
+import img2 from "../assets/images/VenueGallery/1747979452318.jpg";
+import img3 from "../assets/images/VenueGallery/1747979457233.jpg";
+import img4 from "../assets/images/VenueGallery/1747979462165.jpg";
+import img5 from "../assets/images/VenueGallery/1747979468189.jpg";
+import img6 from "../assets/images/VenueGallery/1747979489675.png";
+
 import Navbar from "./Navbar";
 import SubscribeForm from "./SubscribeForm";
 import Footer from "../Footer";
 import LogoCarousel from "./LogoCarousel";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import './../assets/css/venue.css';
 
 const Venue = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <>
-      <Navbar forceScrolled />
-      <div className="pt-[90px]">
+      {/* <Navbar forceScrolled /> */}
+      
         <div class="venue-container">
-          <div class="row g-0 w-100">
-            <div class="col-lg-6 col-md-6">
+          <div class="row g-0 w-100 bg-img">
+            <div class="col-lg-6  p-0">
               <img
                 src="https://www.desalination-resource-recovery.com/static/media/venue-image.ad9c328038bb8cdfb219.png"
                 alt="Sheraton Dubai Creek Hotel & Towers exterior"
-                class="img-fluid venue-image w-100"
+                class=" venue-image w-100"
               />
             </div>
 
-            <div class="col-lg-6 col-md-6 m-0">
+            <div class="col-lg-6  m-0">
               <div class="venue-content">
                 <h1 class="venue-title">VENUE</h1>
 
@@ -54,13 +55,14 @@ const Venue = () => {
                   memorable stay in Dubai.
                 </p>
 
-                <p class="venue-description">
+                <p class=" des_set">
                   More information about the venue and facilities can be found
                   at
-                  <a href="#" class="venue-link">
+                   
+                </p>
+                <a href="#" class="venue-link">
                     Sheraton Dubai Creek Hotel & Towers, Dubai, UAE
                   </a>
-                </p>
 
                 <button class="btn more-info-btn">MORE INFORMATION</button>
               </div>
@@ -74,19 +76,20 @@ const Venue = () => {
 
             <div class="gallery-grid">
               <div class="gallery-item item-1">
-                <div class="row-item">
+                <div class="row-item ">
                   <img src={img1} alt="Luxury Hotel Exterior" />
                 </div>
-                <div class="row-item">
+                <div class="row-item  ">
                   <img src={img2} alt="Luxury Hotel Exterior" />
                 </div>
               </div>
 
               <div class="gallery-item item-2">
-                <div class="row-item">
+                <div class="row-item ">
                   <img src={img3} alt="Luxury Hotel Exterior" />
+            
                 </div>
-                <div class="row-item">
+                <div class="row-item ">
                   <img src={img4} alt="Luxury Hotel Exterior" />
                 </div>
               </div>
@@ -103,73 +106,73 @@ const Venue = () => {
           </div>
         </section>
 
-        <section class="contact-section">
-          <div class="">
-            <div class="contact-content">
-              <h2 class="section-title_venue text-[#080808]">
-                Contact the Venue
-              </h2>
+        <section className="venue-contact">
+  <div className="container">
+    <div className="conact_set">
+      <h2 className="venue-title text-center">Contact the Venue</h2>
 
-              <div class="contact-cards">
-                <div class="contact-card" style={{cursor:'pointer'}} onClick={() => {
-                    window.open(
-                      "https://www.google.com/maps/dir//Baniyas+Rd+-+Port+Saeed+-+Riggat+Al+Buteen+-+Dubai+-+United+Arab+Emirates/@25.2614781,55.2313155,63457m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x3e5f5d98998eab01:0x43788f91ec9688bb!2m2!1d55.313717!2d25.261501?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D",
-                      "_blank"
-                    );
-                  }}>
-                  <h3 class="card-title">Location</h3>
-                  <div class="location-info">
-                    <div class="venue-name d-flex">
-                      <div className="mr-2">
-                        <i class="fas fa-map-marker-alt"></i>
-                      </div>
-                      <div>
-                        {" "}
-                        Sheraton Dubai Creek Hotel & Towers Baniyas St., P.O.
-                        Box 4250
-                        <br /> Dubai, UAE
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="contact-card">
-                  <h3 class="card-title">Contact</h3>
-                  <div class="contact-info">
-                    <div class="contact-item">
-                      <i class="fas fa-phone"></i>
-                      <a href="tel:+97142281111">+971 4-2281111</a>
-                    </div>
-                    <div class="contact-item">
-                      <i class="fas fa-globe"></i>
-                      <a href="https://www.marriott.com" target="_blank">
-                        www.marriott.com
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cta-button">
-                <a
-                  class="btn-take-me"
-                  onClick={() => {
-                    window.open(
-                      "https://www.google.com/maps/dir//Baniyas+Rd+-+Port+Saeed+-+Riggat+Al+Buteen+-+Dubai+-+United+Arab+Emirates/@25.2614781,55.2313155,63457m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x3e5f5d98998eab01:0x43788f91ec9688bb!2m2!1d55.313717!2d25.261501?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D",
-                      "_blank"
-                    );
-                  }}
-                >
-                  Take Me There
-                </a>
+      <div className="venue-card-wrapper">
+        <div
+          className="venue-card"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            window.open(
+              "https://www.google.com/maps/dir//Baniyas+Rd+-+Port+Saeed+-+Riggat+Al+Buteen+-+Dubai+-+United+Arab+Emirates/@25.2614781,55.2313155,63457m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x3e5f5d98998eab01:0x43788f91ec9688bb!2m2!1d55.313717!2d25.261501?entry=ttu",
+              "_blank"
+            );
+          }}
+        >
+          <h3 className="venue-card-title">Location</h3>
+          <div className="venue-location-info">
+            <div className="venue-location">
+              <i className="fas fa-map-marker-alt"></i>
+              <div>
+                Sheraton Dubai Creek Hotel & Towers Baniyas St., P.O. Box 4250
+                <br />
+                Dubai, UAE
               </div>
             </div>
           </div>
-        </section>
+        </div>
+
+        <div className="venue-card">
+          <h3 className="venue-card-title">Contact</h3>
+          <div className="venue-contact-info">
+            <div className="venue-contact-item">
+              <i className="fas fa-phone"></i>
+              <a href="tel:+97142281111">+971 4-2281111</a>
+            </div>
+            <div className="venue-contact-item">
+              <i className="fas fa-globe"></i>
+              <a href="https://www.marriott.com" target="_blank" rel="noopener noreferrer">
+                www.marriott.com
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <LogoCarousel />
-      <SubscribeForm />
-      <Footer />
+
+      <div className="venue-cta">
+        <button
+          className="venue-btn"
+          onClick={() => {
+            window.open(
+              "https://www.google.com/maps/dir//Baniyas+Rd+-+Port+Saeed+-+Riggat+Al+Buteen+-+Dubai+-+United+Arab+Emirates/@25.2614781,55.2313155,63457m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x3e5f5d98998eab01:0x43788f91ec9688bb!2m2!1d55.313717!2d25.261501?entry=ttu",
+              "_blank"
+            );
+          }}
+        >
+          Take Me There
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+      {/* <LogoCarousel /> */}
+      {/* <SubscribeForm />
+      <Footer /> */}
     </>
   );
 };
