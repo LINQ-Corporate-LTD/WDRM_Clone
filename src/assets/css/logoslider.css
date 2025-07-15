@@ -7,11 +7,11 @@
 }
 
 /* Remove background and box shadow from slick slider */
-.slick-slider {
+/* .slick-slider {
   background: none !important;
   background-color: transparent !important;
   box-shadow: none !important;
-}
+} */
 
 .slick-track {
   background: none !important;
@@ -19,19 +19,19 @@
   box-shadow: none !important;
 }
 
-.slick-list {
+/* .slick-list {
   background: none !important;
   background-color: transparent !important;
   box-shadow: none !important;
-}
+} */
 
 /* Remove any borders or outlines */
-.slick-slider,
+/* .slick-slider,
 .slick-track,
 .slick-list {
   border: none !important;
   outline: none !important;
-}
+} */
 
 /* Additional override for any container backgrounds */
 .logo-slider-container .slick-slider {
