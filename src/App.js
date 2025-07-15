@@ -21,6 +21,7 @@ import Attandees from "./components/Attandees";
 import AddDelegateForm from "./components/AddDelegateForm";
 import BookingForm from "./components/BookingForm";
 import AddSponsorDelegateForm from "./components/AddSponsorDelegateForm";
+import News from "./components/News";
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
             <Route path="adddelegate" element={<AddDelegateForm />} />
             <Route path="booking-form" element={<BookingForm />} />
             <Route path="addsponsordelegate" element={<AddSponsorDelegateForm />} />
+            <Route path="news" element={<News />} />
+
           </Route>
         </Routes>
       </BrowserRouter>

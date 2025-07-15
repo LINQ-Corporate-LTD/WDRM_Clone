@@ -28,7 +28,7 @@ const navItems = [
     name: "Resources",
     // href: "#resources",
     dropdown: [
-      { name: "Latest News", href: "#downloads" },
+      { name: "Latest News", href: "/news" },
       { name: "Media Partners", href: "/media-partners" },
       { name: "FAQ", href: "/faqs" },
     ],

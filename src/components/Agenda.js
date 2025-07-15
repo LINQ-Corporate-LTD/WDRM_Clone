@@ -185,7 +185,7 @@ const Agenda = () => {
     <div className="pt-[90px]">
       {/* Highlights Section */}
       <section className="highlights-section">
-        <div className="container_kevin">
+        <div className="container">
           <h1 className="highlights-title">HIGHLIGHTS OF THE PROGRAM</h1>
           <div className="highlights-grid">
             {highlights.map((highlight, index) => (
@@ -207,7 +207,7 @@ const Agenda = () => {
 
       {/* Program Section */}
       <section className="program-section">
-        <div className="container_kevin">
+        <div className="container">
           <h1 className="program-title">PROGRAM 2025</h1>
           <div className="program-container">
             <div
