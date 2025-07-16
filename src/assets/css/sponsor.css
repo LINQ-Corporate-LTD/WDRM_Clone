@@ -671,8 +671,64 @@
     width: 100%;
 }
 
+.SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca div {
+    width: 100%;
+}
+
+.SponsorCards_cardContainerOuter__yj9ca .slick-slide>div {
+    padding: 0 30px;
+    /* Horizontal space between each slide */
+    box-sizing: border-box;
+}
+
+.SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca>div .SponsorCards_cardContainerInner__BPPEL {
+    grid-gap: 20px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    width: -webkit-max-content;
+    width: max-content;
+}
+
+.SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca>div .SponsorCards_cardContainerInner__BPPEL .SponsorCards_card__8eNkT {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 3px 3px 8px 1px #00000026;
+    -webkit-box-shadow: 3px 3px 8px 1px #00000026;
+    -moz-box-shadow: 3px 3px 8px 1px #00000026;
+    break-inside: avoid-column;
+    cursor: pointer;
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    position: relative;
+}
+
+.SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca>div .SponsorCards_cardContainerInner__BPPEL .SponsorCards_card__8eNkT img {
+    height: auto;
+    max-height: 50%;
+    object-fit: contain;
+    width: 50%;
+}
+
+.SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca>div .SponsorCards_cardContainerInner__BPPEL:last-child {
+    margin-bottom: 0;
+}
+
+.benefit-icon svg {
+    fill: #00baff;
+    object-fit: contain;
+}
 
 
+
+.SponsorsScreen_container__a4ngc .SponsorsScreen_exhibitCardContainer__6IHeV {
+    background-color: #00baff;
+    padding: 97px 0 100px;
+}
 
 
 /* SponsorsScreen_exhibitCardContainer__6IHeV */
@@ -798,6 +854,10 @@
     .SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L h2 {
         font-size: 30px;
     }
+
+    .SponsorsScreen_container__a4ngc .SponsorsScreen_exhibitCardContainer__6IHeV {
+        padding: 60px 0;
+    }
 }
 
 @media only screen and (max-width: 1339px) {
@@ -815,6 +875,21 @@
 
     .SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca {
         max-width: 980px;
+    }
+}
+
+@media only screen and (max-width: 1231px) {
+    .SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca>div .SponsorCards_cardContainerInner__BPPEL {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .SponsorsScreen_container__a4ngc .SponsorsScreen_sponsorsHelp__-E0Kh>div {
+        justify-content: space-between;
+        max-width: 960px;
+    }
+
+    .SponsorsScreen_container__a4ngc .SponsorsScreen_sponsorsHelp__-E0Kh>div .SponsorsScreen_card__EoH0S {
+        margin-bottom: 30px;
     }
 }
 
@@ -879,6 +954,15 @@
     .DetailsContainer_wholeContainer__385Iv .DetailsContainer_container__JrWjX .DetailsContainer_textContainer__D8Ukb button {
         font-size: 16.5px;
         min-height: 50px;
+    }
+
+    .SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca>div .SponsorCards_cardContainerInner__BPPEL .SponsorCards_card__8eNkT {
+        height: 200px;
+    }
+
+
+    .SponsorsScreen_container__a4ngc .SponsorsScreen_exhibitCardContainer__6IHeV {
+        padding: 40px 0;
     }
 
 
@@ -960,6 +1044,14 @@
         position: relative;
     }
 
+    .SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca>div .SponsorCards_cardContainerInner__BPPEL {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca>div .SponsorCards_cardContainerInner__BPPEL .SponsorCards_card__8eNkT {
+        height: 132px;
+    }
+
 
 
 
@@ -972,5 +1064,9 @@
 @media only screen and (max-width: 480px) {
     .DetailsContainer_wholeContainer__385Iv .DetailsContainer_container__JrWjX .DetailsContainer_textContainer__D8Ukb .DetailsContainer_innerContent__6NQGR {
         margin: 15px 0 20px;
+    }
+
+    .SponsorCards_container__o3uWn .SponsorCards_AttendeesContainer__PLZ7L>div .SponsorCards_cardContainerOuter__yj9ca>div .SponsorCards_cardContainerInner__BPPEL .SponsorCards_card__8eNkT {
+        height: 120px;
     }
 }
